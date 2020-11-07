@@ -1,1 +1,115 @@
-assdfgghh
+1)  C Programming History
+
+2) Write a c program to find as follows :
+     a) a=30 ,b =20 find a/b,   where a and b are float
+     b) Program to find the area of circle and rectangle.
+     c) Program to print your name with your age.
+
+3) Write a program to calculate the following :
+      a= 3.5
+      b=2.5
+    1)  a2+b2+2ab   
+    3)  a2 /b2  
+    
+4) Write a program to define an integer ,character ,float and double values and print all values along with its size.
+
+5) Create a program to take 2 values from user and print addition, multiplication ,subtraction and division.
+
+6) Take two numbers from user and compare values and print results as false or true.
+
+7) Create two variables , one is integer and other is double and do the operations like multiplication and subtraction on these variable.
+
+8) Write a program to define a function Calculator() which accepts two integer values and print sum,subtraction,division and multiplication.
+
+9) Write a program to define a function which takes a number from user and print the number.
+
+10) Write a program to take a number from user and pass this number to the function named as Square() which returns the square of the number and print square value in main.
+
+11) Write a function which takes a character in small case and returns the same character in capital case.
+
+12) Write a program to display the result acoording to following using only if:
+     
+       marks < 40        Fail
+       40 <= marks <65   Second Division
+       65 <= marks < 75  First Division
+       75 <= marks       Distinction
+
+       
+13) Write a program to find the largest of two numbers given by user.
+       
+14) Write a program using switch....case , create a function which takes two values as parameters 
+
+    +   ======>  Do Addition of two nos.
+    -   ======>  Subtraction
+    /   ======>  Division
+    *   ======>  Multiplication
+    
+    Output :
+             Enter two nos : 2 3
+             Press + to ADD, - to Subtract, / to divide, * to Multiply : +
+             Sum of 2 and 3 is : 5
+             
+15) Write a program to do the following using switch...case
+
+    Read percentage of a student inside a function and check if the percentage lies in the following range and print the Grade accodingle :
+    Percentage            Grade
+    80<per<=100           A+
+    60<per<=80            A
+    per<60                Fail
+    
+    Output :
+           Enter your Percentage : 67 
+           Percenge : 67 % , Your Grade is : A 
+           
+ 16) Display the following Pattern :
+     *
+     **
+     ***
+     ****
+     *****
+             
+  17) Print the table of the entered number.
+       
+  18) Print the square of number between 1 and 10.
+  
+     Output:
+     
+       Square of 1 is 1
+       Square of 2 is 4
+       Square of 3 is 9
+
+  19) Write a program to print the values between 1 and 30.
+      Skip valus as 1 5 9 10 15
+      
+      Output : 23467811
+     
+  20) Write a program to define marks of 5 subjects and print the average of marks.
+  
+  21) Print the sum of numbers between 10 and 20.
+  
+  22) Print the sum of only odd numbers between 1 and 10.
+  
+  23) Program to check a number is prime or not
+  
+  24) Program to find Sum of digits
+  
+  25) Program to find Largest of n numbers
+  
+  26) Program to find Factorial of a number
+  
+  27) Program to find Average of n numbers entered by user
+  
+  28) Program to display fibonnacci series 0 1 1 2 3 5 8....
+  
+  29) Program to swap 2 numbers
+  
+  30) Write a program to define a float array of marks of 5 subjects of a studdent and calculate the average of marks and display.
+      Enter marks : 55 66 44 77 88
+      Average :  ?
+      
+      
+  
+  
+  
+  
+  
