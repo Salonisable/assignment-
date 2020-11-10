@@ -135,7 +135,20 @@ ANS:
      ***
      ****
      *****
-     ANS:
+     ANS:#include <stdio.h>
+
+int main() {
+   int i, j, rows;
+   printf("Enter the number of rows: ");
+   scanf("%d", &rows);
+   for (i = 1; i <= rows; ++i) {
+      for (j = 1; j <= i; ++j) {
+         printf("* ");
+      }
+      printf("\n");
+   }
+   return 0;
+}
        ====================================================================================================================================================      
   17) Print the table of the entered number.
   ANS:
@@ -267,7 +280,30 @@ void myfucntion (int *p1, int *p2)
 }
       ====================================================================================================================================================
   36) Create a function addition() which accepts addresses of two variables. This function does the addition of two numbers.
-  ANS:
+  ANS:#include<stdio.h>
+
+void show(int s,int t)
+{
+/*	int a;
+	z=(s+t);*/
+}
+void display(int *s,int *t)
+{
+    int z;
+	z=(*s)+(*t);
+	printf("%d + %d = %d",*s,*t,z);
+}
+int main()
+{
+	int z;
+	int x=20;
+	int y=30;
+	
+	show(x,y);
+	printf("%d %d\n",x,y);
+	display(&x,&y);
+
+}
   ====================================================================================================================================================
   37) Create a program to find average of array elements where array is passed to the function.
   ANS:#include<stdio.h>
