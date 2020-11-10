@@ -1,45 +1,108 @@
 1)  C Programming History
-Ans:C programming language was developed in 1972 by Dennis Ritchie at bell laboratories of AT&T (American Telephone & Telegraph),
+ANS:C programming language was developed in 1972 by Dennis Ritchie at bell laboratories of AT&T (American Telephone & Telegraph),
 located in the U.S.A. Dennis Ritchie is known as the founder of the c language. 
 It was developed to overcome the problems of previous languages such as B, BCPL, etc.
-
+====================================================================================================================================================
 2) Write a c program to find as follows :
      a) a=30 ,b =20 find a/b,   where a and b are float
      b) Program to find the area of circle and rectangle.
      c) Program to print your name with your age.
+     ANS:#include<stdio.h> 
+        int main()  
+      {      
+
+       float a=30;
+       float b =20;
+       float pir=3.14;
+        printf("Area of circle  a = %f and b = %f \n pir^2 = %f \n",a,b,pir*a*b);
+        printf("Area of rectangle  a = %f and b = %f \n Area of rectangle = %f \n",a,b,a*b );
+        printf("Hi I am Nilesh Pillay age 19");
+	   
+	    return 0;
+     }
+     ====================================================================================================================================================
 
 3) Write a program to calculate the following :
       a= 3.5
       b=2.5
     1)  a2+b2+2ab   
     3)  a2 /b2  
+    ANS:: #include<stdio.h> 
+       int  main() 
+    {
+	     float a=3.5;
+	     float b=2.5;
+	  // Q1
+	     printf("a^2 + b^2 + 2ab =%f\n",(a*a)+(b*b)+(2*a*b));
+	 //Q2
+	     printf("a^2 - 2ab + b^2 =%f\n",(a*a)-(2*a*b)+(b*b));
+	 //Q3
+	     printf("a^2/b^2=%f\n",(a*a)/(b*b));
+	  return 0;	
+   }
+   ====================================================================================================================================================
     
 4) Write a program to define an integer ,character ,float and double values and print all values along with its size.
+ANS:#include<stdio.h> 
 
+int  main() 
+{
+	int i=30;
+	short x=20;
+	char c='a';
+	float f=1.2;
+	double d=1.3;
+	
+	printf("size of integer : %d\n",sizeof(i));
+	printf("size of short : %d\n",sizeof(x));
+    printf("size of character : %d\n",sizeof(c));
+    printf("size of float : %d\n",sizeof(f));
+    printf("size of double : %d\n",sizeof(d));
+    
+	return 0;	
+}
+====================================================================================================================================================
 5) Create a program to take 2 values from user and print addition, multiplication ,subtraction and division.
+ANS:
+====================================================================================================================================================
 
 6) Take two numbers from user and compare values and print results as false or true.
+ANS:
+====================================================================================================================================================
 
 7) Create two variables , one is integer and other is double and do the operations like multiplication and subtraction on these variable.
+ANS:
+====================================================================================================================================================
 
 8) Write a program to define a function Calculator() which accepts two integer values and print sum,subtraction,division and multiplication.
+ANS:
+====================================================================================================================================================
 
 9) Write a program to define a function which takes a number from user and print the number.
+ANS:
+====================================================================================================================================================
 
 10) Write a program to take a number from user and pass this number to the function named as Square() which returns the square of the number and print square value in main.
+ANS:
+====================================================================================================================================================
 
 11) Write a function which takes a character in small case and returns the same character in capital case.
+ANS:
+====================================================================================================================================================
 
 12) Write a program to display the result acoording to following using only if:
+
      
        marks < 40        Fail
        40 <= marks <65   Second Division
        65 <= marks < 75  First Division
        75 <= marks       Distinction
-
+       ANS:
+====================================================================================================================================================
        
 13) Write a program to find the largest of two numbers given by user.
-       
+ANS:
+    ====================================================================================================================================================   
 14) Write a program using switch....case , create a function which takes two values as parameters 
 
     +   ======>  Do Addition of two nos.
@@ -51,7 +114,8 @@ It was developed to overcome the problems of previous languages such as B, BCPL,
              Enter two nos : 2 3
              Press + to ADD, - to Subtract, / to divide, * to Multiply : +
              Sum of 2 and 3 is : 5
-             
+     ANS:
+     ====================================================================================================================================================        
 15) Write a program to do the following using switch...case
 
     Read percentage of a student inside a function and check if the percentage lies in the following range and print the Grade accodingle :
@@ -63,16 +127,19 @@ It was developed to overcome the problems of previous languages such as B, BCPL,
     Output :
            Enter your Percentage : 67 
            Percenge : 67 % , Your Grade is : A 
-           
+     ANS:      
+     ====================================================================================================================================================      
  16) Display the following Pattern :
      *
      **
      ***
      ****
      *****
-             
+     ANS:
+       ====================================================================================================================================================      
   17) Print the table of the entered number.
-       
+  ANS:
+       ====================================================================================================================================================
   18) Print the square of number between 1 and 10.
   
      Output:
@@ -80,76 +147,177 @@ It was developed to overcome the problems of previous languages such as B, BCPL,
        Square of 1 is 1
        Square of 2 is 4
        Square of 3 is 9
-
+       ANS:
+====================================================================================================================================================
   19) Write a program to print the values between 1 and 30.
       Skip valus as 1 5 9 10 15
       
       Output : 23467811
-     
+      ANS:
+     ====================================================================================================================================================
   20) Write a program to define marks of 5 subjects and print the average of marks.
-  
+  ANS:
+  ====================================================================================================================================================
   21) Print the sum of numbers between 10 and 20.
-  
+  ANS:
+  ====================================================================================================================================================
   22) Print the sum of only odd numbers between 1 and 10.
-  
+  ANS:
+  ====================================================================================================================================================
   23) Program to check a number is prime or not
-  
+  ANS:
+  ====================================================================================================================================================
   24) Program to find Sum of digits
-  
+  ANS:
+  ====================================================================================================================================================
   25) Program to find Largest of n numbers
-  
+  ANS:
+  ====================================================================================================================================================
   26) Program to find Factorial of a number
-  
+  ANS:
+  ====================================================================================================================================================
   27) Program to find Average of n numbers entered by user
-  
+  ANS:
+  ====================================================================================================================================================
   28) Program to display fibonnacci series 0 1 1 2 3 5 8....
-  
+  ANS:
+  ====================================================================================================================================================
   29) Program to swap 2 numbers
-  
+  ANS:
+  ====================================================================================================================================================
   30) Write a program to define a float array of marks of 5 subjects of a studdent and calculate the average of marks and display.
       Enter marks : 55 66 44 77 88
       Average :  ?31) Create an array of 5 integer values and print the double of every value of an array using pointer concept:
       Input : num[]={1,2,3,4,5}
       Output: num[]={2,4,6,8,10}
-      
+      ANS:
+      ====================================================================================================================================================
   32) Accept first name and lastname from user and print fullname.
-  
+  ANS:
+  ====================================================================================================================================================
   33) Write a program to take a city name from user and print the city name in reverse order using character pointer.
-  
+  ANS:
+  ====================================================================================================================================================
   34) Input a string from user and print only vowels of the string.
       Input : Pune
       Output : ue
-   
+      ANS:
+   ====================================================================================================================================================
   35) Make two pointer variables p1 and p2 which are pointing to x and y variables, x=10, y=20. Create a function which accepts two pointers as a parameter and 
       perform addition operation on x and y. 
-      
+      ANS:
+      ====================================================================================================================================================
   36) Create a function addition() which accepts addresses of two variables. This function does the addition of two numbers.
-  
+  ANS:
+  ====================================================================================================================================================
   37) Create a program to find average of array elements where array is passed to the function.
-  
+  ANS:
+  ====================================================================================================================================================
   38) Create an array of characters dynamically using malloc function.
-  
+  ANS:
+  ====================================================================================================================================================
       
       31) Create an array of 5 integer values and print the double of every value of an array using pointer concept:
       Input : num[]={1,2,3,4,5}
       Output: num[]={2,4,6,8,10}
-      
+      ANS:
+      ====================================================================================================================================================
   32) Accept first name and lastname from user and print fullname.
-  
+  ANS:
+  ====================================================================================================================================================
   33) Write a program to take a city name from user and print the city name in reverse order using character pointer.
-  
+  ANS:
+  ====================================================================================================================================================
   34) Input a string from user and print only vowels of the string.
       Input : Pune
       Output : ue
-   
+      ANS:
+   ====================================================================================================================================================
   35) Make two pointer variables p1 and p2 which are pointing to x and y variables, x=10, y=20. Create a function which accepts two pointers as a parameter and 
       perform addition operation on x and y. 
-      
+      ANS:#include<stdio.h>
+
+void myfucntion (int *p1, int *p2)
+{
+	printf("\n value of  x : %d\n",(*p1+*p2));
+
+	
+	
+}
+
+ int main()
+
+	{
+	int x=10, y=20;
+	int x,*y;
+	p1=&x;
+	p2=&y;
+	 
+	 printf("values of a =  %d\nb = %d\n",x,y);
+ show(p1,p2);
+	}
+	 
+	 
+	 
+	
+}
+
+	
+	
+}
+      ====================================================================================================================================================
   36) Create a function addition() which accepts addresses of two variables. This function does the addition of two numbers.
-  
+  ANS:
+  ====================================================================================================================================================
   37) Create a program to find average of array elements where array is passed to the function.
-  
+  ANS:#include<stdio.h>
+
+void getaverage(int *p)
+{
+	int i;
+	float avg,sum=0.0;
+	for(i=0;i<5;i++)
+	{
+		printf("%d",*(p+i));
+		sum=sum+p[i];
+	}
+	avg=sum/5;
+	printf("\naverage of array elements : %f",avg);
+}
+
+int main()
+{
+	int numbers[]={10,20,30,40,50};
+	
+	getaverage(numbers);
+}
+  ================================================================================================================================================================================
   38) Create an array of characters dynamically using malloc function.
+  ANS:#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+	int n;
+	printf("enter no of elements in array :");
+	scanf("%d",&n);
+	
+	char *p=(char*) malloc(n*sizeof(char ));
+	int i;
+	
+	for(i=0;i<n;i++)
+	{
+		printf("Enter characters  %d :",i+1);
+		scanf("%c",&p[i]);
+	}
+	
+	for(i=0;i<n;i++)
+	{
+		printf("%c ",p[i]);
+	}
+	
+}
+======================================================================================================================================================
   
       
       
