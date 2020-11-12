@@ -63,27 +63,102 @@ int  main()
 }
 ====================================================================================================================================================
 5) Create a program to take 2 values from user and print addition, multiplication ,subtraction and division.
-ANS:
+ANS: #include<stdio.h> 
+
+void main() 
+{ 
+   printf("Enter number : \n")
+   scanf("%d",&num1)
+   printf("Enter number : \n")
+   scanf("%d",&num2)
+   printf("addition:%d\n",(num1+num2))
+   printf("multiplication:%d\n",(num1*num2))
+   printf("subtraction:%d\n",(num1-num2))
+   printf(" division:%d\n",(num1/num2))
+}
 ====================================================================================================================================================
 
 6) Take two numbers from user and compare values and print results as false or true.
-ANS:
+ANS:#include<stdio.h>
+   void main()
+  {
+	int a=80;
+	int b=70;
+	
+	if(a<b)
+	printf("1");
+	else
+	if(a>b)
+	printf("0");
+  }
 ====================================================================================================================================================
 
 7) Create two variables , one is integer and other is double and do the operations like multiplication and subtraction on these variable.
-ANS:
+ANS: #include<stdio.h>
+     main()
+   {
+	int a=9;
+	double b=60;
+	
+	
+	printf("mul of a and b=%d\n");
+	
+	
+	printf("sub of a and b=%d\n");
+	
+   }
 ====================================================================================================================================================
 
 8) Write a program to define a function Calculator() which accepts two integer values and print sum,subtraction,division and multiplication.
-ANS:
+ANS:#include<stdio.h> 
+     int my_fun()
+   { 
+      printf("addition:%d\n",(num1+num2))
+      printf("multiplication:%d\n",(num1*num2))
+      printf("subtraction:%d\n",(num1-num2))
+      printf(" division:%d\n",(num1/num2))
+   }
+     void main() 
+   { 
+      printf("Enter number : \n");
+      scanf("%d",&num1);
+      printf("Enter number : \n");
+      scanf("%d",&num2);
+      my_fun();
+   }
 ====================================================================================================================================================
 
 9) Write a program to define a function which takes a number from user and print the number.
-ANS:
+ANS: #include<stdio.h>
+void fun()
+{ int num;
+  printf("Enter you number: ");
+  scanf("%d",&num);
+ printf("Your number %d is luckly number for you ",num);
+}
+int main()
+{
+    fun();
+    return 0;
+}
 ====================================================================================================================================================
 
 10) Write a program to take a number from user and pass this number to the function named as Square() which returns the square of the number and print square value in main.
-ANS:
+ANS:#include<stdio.h>
+
+int  Square(int x)
+{
+	printf("%d^2 = %d",x,(x*x));
+}
+
+int main() 
+{
+    int n;
+    printf("Enter a number which you want to Square : ");
+    scanf("%d", &n);
+    Square(n);
+    printf("this is end of code");
+}
 ====================================================================================================================================================
 
 11) Write a function which takes a character in small case and returns the same character in capital case.
@@ -97,11 +172,66 @@ ANS:
        40 <= marks <65   Second Division
        65 <= marks < 75  First Division
        75 <= marks       Distinction
-       ANS:
+       ANS: #include<stdio.h>
+
+int main()
+{
+	float  s1, s2, s3, s4, s5, marks,avg;
+	
+	printf("enter marks of 1 subjects\n");
+	scanf("%f", &s1);
+    printf("enter marks of 2 subjects\n");
+	scanf("%f", &s2);
+	printf("enter marks of 3 subjects\n");
+	scanf("%f", &s3);
+	printf("enter marks of 4 subjects\n");
+	scanf("%f", &s4);
+	printf("enter marks of 5 subjects\n");
+	scanf("%f", &s5);		
+	marks = (s1 + s2 + s3 + s4 + s5);
+	avg=marks/5;
+	printf("Total marks : %f \n",marks);
+	printf("Average marks : %f \n",avg);
+	if(marks < 40)
+	{
+		printf("fail\n");
+	}
+    if((40 <=marks)&&( marks<65));
+   {
+	printf("second division\n");
+   }
+    if((65 <=marks)&&
+	(marks <75));
+   {  
+    	printf("first division\n");
+   }
+	if(75 <=marks);
+	{
+		printf("distinction\n");
+    }
+    return 0;
+}
 ====================================================================================================================================================
        
 13) Write a program to find the largest of two numbers given by user.
-ANS:
+ANS:#include<stdio.h>
+
+int main()
+{
+	int  a, b;
+	
+	printf("enter 2 integer numbers\n");
+	scanf("%d%d",&a , &b);
+	
+	printf("largest of %d %d is %d\n", a, b, largest(a, b));
+	
+	return 0;
+}
+
+int largest(int x, int y)
+{
+	return (x>y?x:y);
+}
     ====================================================================================================================================================   
 14) Write a program using switch....case , create a function which takes two values as parameters 
 
@@ -114,7 +244,38 @@ ANS:
              Enter two nos : 2 3
              Press + to ADD, - to Subtract, / to divide, * to Multiply : +
              Sum of 2 and 3 is : 5
-     ANS:
+     ANS:#include<stdio.h>
+
+int main()
+{
+	int a, b, choice;
+	
+	printf("enter your choice\n");
+	printf("1. addition\n2. subtraction\n3. multiplication\n4. division\n");
+	scanf("%d",&choice);
+	
+	if( choice >4 )
+	{
+		printf("slect in range!\n");
+	}
+	else
+	{
+		printf("enter 2 integer numbers\n");
+		scanf("%d %d", &a, &b);
+	}
+	
+	switch(choice)
+	{
+		case 1: printf("%d + %d = %d\n", a, b, (a+b));
+		        break;
+		case 2: printf("%d - %d = %d\n", a, b, (a-b));
+		        break;
+		case 3: printf("%d * %d = %d\n", a, b, (a*b));
+		        break;
+	    case 4: printf("%d / %d = %d\n", a, b, (a/b));
+		        break;
+	}
+}
      ====================================================================================================================================================        
 15) Write a program to do the following using switch...case
 
@@ -151,7 +312,20 @@ int main() {
 }
        ====================================================================================================================================================      
   17) Print the table of the entered number.
-  ANS:
+  ANS: #include<stdio.h>
+
+void main()
+{
+	int n,t,i;
+	printf("enter the number");
+	scanf("%d",&n);
+	t=1;
+	for(i=1;i<=10;i++)
+	{
+		t=i*n;
+		printf("\n %d",t);
+	}
+} 
        ====================================================================================================================================================
   18) Print the square of number between 1 and 10.
   
@@ -160,7 +334,19 @@ int main() {
        Square of 1 is 1
        Square of 2 is 4
        Square of 3 is 9
-       ANS:
+       ANS:#include<stdio.h>
+    void main()
+{
+	int a=1;
+	
+	while(a<=10)
+	           {
+			   
+	
+	            printf("\n square of  %d is %d",a,a*a);
+	            a++;
+	           }       	                
+}
 ====================================================================================================================================================
   19) Write a program to print the values between 1 and 30.
       Skip valus as 1 5 9 10 15
@@ -355,10 +541,127 @@ int main()
 }
 ======================================================================================================================================================
   
-      
-      
+      39)Create a program to enter your name and age from keyboard and print name and age.
+
+Ans:  
+    #include<stdio.h>
+
+ 
+ int main()
+ {
+ 	char name[15];
+	printf("Enter Your Full Name : ");
+	gets(name);
+
+	char age[2];
+ 	printf("Enter Your Age :");
+ 	gets(age);
+ 	
+ 	printf("Your name is ");
+ 	puts(name);
+ 	printf("Your age is ");
+ 	puts(age);
+ 	
+ }
+ =============================================================================================================================================================
+      40)write a program to copy a string into another.
+
+Ans:
+    #include<stdio.h> 
+    #include<string.h>
+
+
+int main()
+{
+	char first_name[10]="saloni";
+	char last_name[10]=" sable";
+
+	strcat(first_name, last_name); 
+	puts(first_name);
+} 
   
-  
-  
-  
-  
+  =============================================================================================================================================================
+41) Create a program to input a string from user and find its length.
+Ans:
+#include<stdio.h>
+    #include<string.h>
+int main()
+{
+	char name[30];
+	printf("Enter a Your Full Name  :");
+	gets(name);
+	
+	char *p=name;
+	int count=0;
+
+	while(*p!='\0')       
+	{
+		printf("%c",*p);
+		count++;
+		p++;    
+	}
+	
+	printf("\n Length of name by loop :%d ",count);
+	
+	printf("\nLength of name by strlen  : %d",strlen(name));
+	
+}
+  ==============================================================================================================================================================
+ 42)Enter username and password and if username is Ajay and password is 1234 then print a message Welcome Ajay.
+Ans:
+ #include<stdio.h>
+    #include<string.h>
+int main()
+{
+	char user_name[4]="Ajay";
+	char name[10];
+	int pass;
+	
+	printf("Enter User Name :");
+	gets(name);
+	
+	fflush(stdin);
+	
+	printf("Enter Password :");
+	scanf("%d",&pass);
+	
+	int val = strcmp(user_name,name);
+	
+    if(val==0)
+    {
+    	 if(pass==1234)
+    	 {
+             printf("Welcome Ajay");
+         }
+         else
+         {
+  	          printf("invalid Password !!");
+  	     }
+
+	}
+    
+    else
+    {
+    	printf("Your not the user !! ");
+	}
+  	
+}
+  ======================================================================================================================================
+43)Input principal amount = 20000, rate of interest = 7.5 and no of years= 2  ,find simple interest using formula as
+   SI = p*r*t / 100
+
+Ans:
+    #include<stdio.h>
+
+void main()
+{
+	float p=20000,r=7.5,t=2,si;
+	printf("Finding Simple interest of :\n");
+	printf("The Principal amount is %f , Rate of interest is %f and Number of years is %f\n",p,r,t);
+	si= p*r*t / 100;
+	printf("\tAnswer:\n");
+	printf("Simple interest = Principal * Rate of interest * Number of years / 100\n");
+	printf("Simple interest = %f * %f * %f / 100 = %f\n",p,r,t,si);
+	printf("Therfore the Simple interest  will be %f",si);
+}
+=================================================================================================================================================================================
