@@ -110,36 +110,11 @@ ANS: #include<stdio.h>
 ====================================================================================================================================================
 
 8) Write a program to define a function Calculator() which accepts two integer values and print sum,subtraction,division and multiplication.
-ANS:#include<stdio.h> 
-     int my_fun()
-   { 
-      printf("addition:%d\n",(num1+num2))
-      printf("multiplication:%d\n",(num1*num2))
-      printf("subtraction:%d\n",(num1-num2))
-      printf(" division:%d\n",(num1/num2))
-   }
-     void main() 
-   { 
-      printf("Enter number : \n");
-      scanf("%d",&num1);
-      printf("Enter number : \n");
-      scanf("%d",&num2);
-      my_fun();
-   }
+ANS:
 ====================================================================================================================================================
 
 9) Write a program to define a function which takes a number from user and print the number.
-ANS: #include<stdio.h>
-void fun()
-{ int num;
-  printf("Enter you number: ");
-  scanf("%d",&num);
- printf("Your number %d is luckly number for you ",num);
-}
-int main()
-{
-    fun();
-    return 0;
+ANS: 
 }
 ====================================================================================================================================================
 
