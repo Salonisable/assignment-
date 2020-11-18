@@ -1,11 +1,245 @@
 Q.1 Create a structure Student ( rollno, name), Create a structure variable and Access the members using structure variable.
+#include<stdio.h>
+#include<conio.h>
+#include<string.h>
+
+struct student
+{
+	int rollno;
+	char name[20];
+};
+
+main()
+{
+	struct student s1,s2,s3,s4,s5;
+	
+	s1.rollno=1;
+	s2.rollno=2;
+	s3.rollno=3;
+	s4.rollno=4;
+	s5.rollno=5;
+	
+	strcpy(s1.name,"saloni");
+	strcpy(s2.name,"simran");
+	strcpy(s3.name,"Riya");
+	strcpy(s4.name,"priyanka");
+	strcpy(s5.name,"celestina");
+	
+	printf("\nrollno of student 1 : %d\n name : %s\n",s1.rollno,s1.name);
+	printf("\nrollno of student 2 : %d\n name : %s\n",s2.rollno,s2.name);
+	printf("\nrollno of student 3 : %d\n name : %s\n",s3.rollno,s3.name);
+	printf("\nrollno of student 4 : %d\n name : %s\n",s4.rollno,s4.name);
+	printf("\nrollno of student 5 : %d\n name : %s\n",s5.rollno,s5.name);
+	
+}
+
+======================================================================================================================================================================
 Q.2 Create a structure pointer which can access the members of the structure Student and print member values.
+#include<stdio.h>
+#include<string.h>
+
+  struct student
+ {
+ 	int eid;
+ 	char name[30];
+ 	char city[20];
+ 	
+ };
+ 
+main()
+{
+ 	  struct employee e[3];
+ 	  char nm[20];
+ 	  char cy[20];
+	
+	int i;
+	for(i=0;i<3;i++)
+	{
+		printf("Enter id : ");
+		scanf("%d",&e[i].eid);
+		
+		fflush(stdin);
+		printf("Enter name : ");
+		gets(nm);
+		strcpy(e[i].name,nm);
+		
+		fflush(stdin);
+		printf("Enter city : ");
+		gets(nm);
+		strcpy(e[i].city,cy);	
+		
+		for(i=0;i<3;i++)
+		{
+			printf("id : %d,name : %s,city : %s\n",e[i].eid,e[i].city);
+		}
+		
+	}
+
+	
+
+	
+	
+	
+}
+
+
+
+======================================================================================================================================================================
+
+
 Q.3 Create an array of structure which is used to store 3 employee records.
+#include<stdio.h>
+#include<conio.h>
+
+struct employee
+{
+	int id;
+	char name[30];
+	char city[30];
+};
+
+int main()
+{
+	struct employee e[7];
+	char nm[25];
+	char cy[20];
+	int i;
+	for(i=0;i<3;i++)
+	{
+		printf("enter id : ");
+		scanf("%d",&e[i].id);
+		
+		fflush(stdin);
+		printf("enter name : ");
+		gets(nm);
+		strcpy(e[i].name,nm);
+		
+		fflush(stdin);
+		printf("enter city : ");
+		gets(cy);
+		strcpy(e[i].city,cy);
+		fflush(stdin);
+	}
+	
+	for(i=0;i<3;i++)
+	{
+		printf("id : %d , name : %s , city : %s\n",e[i].id,e[i].name,e[i].city);
+	}
+}
+
+======================================================================================================================================================================
 Q.4 Create a float pointer which points to the float array and access all elements of array using float pointer
+#include<stdio.h>
+
+int main()
+{
+	int *p;
+	
+	p=(int*)malloc(sizeof(int));
+	*p=400;
+	
+	printf("value : %d ",*p);
+	
+	free(p);
+  
+	
+	
+	
+}
 Q.5 Create an integer pointer for which memory is allocated dynamically.
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+	int *p;
+	
+	p=(int*)malloc(sizeof(int));
+	*p=400;
+	
+	printf("value : %d ",*p);
+	
+	free(p);
+  
+	
+	
+	
+}
+======================================================================================================================================================================
 Q.6 Create a stack of 5 characters and display all elements.
+
+======================================================================================================================================================================
 Q.7 Create a stack of 5 names of employees and delete the last name and display it.
+
+======================================================================================================================================================================
 .8 Create two stacks A and B . A contains 3 alphabets and B contains 3 numbers. Display Both stacks.
+
+======================================================================================================================================================================
 Q.9 Create a queue which contains 5 double values and print all values.
+#include<stdio.h>
+#define SIZE 5
+
+typedef struct queue
+
+{
+int front;
+int rear;
+double elements[SIZE];
+
+}queue;
+
+void initialize(queue *sp)
+{
+sp->front=-1;
+sp->rear=-1;
+}
+
+void add(queue *sp,double item)
+
+{
+if(sp->rear==SIZE-1)
+printf("\nStack overflow");
+else
+{
+if(sp->front == -1)
+sp->front=0;
+sp->elements[++sp->rear]=item;
+}
+}
+int rem(queue *sp)
+{
+char x;
+if(sp->front==-1)
+printf("\nStack underflow");
+else
+x=sp->elements[sp->front++];
+return x;
+}
+void display(queue *sp)
+{
+int i;
+for(i=sp->front;i<=sp->rear;i++)
+{
+printf("Double values : %lf\n",sp->elements[i]);
+}
+}
+int main()
+{
+queue e;
+initialize(&e);
+add(&e,10.234);
+add(&e,11.234);
+add(&e,12.234);
+add(&e,13.234);
+add(&e,14.234);
+display(&e);
+}
+ 
+
+======================================================================================================================================================================
 Q.10 Create a queue which contains 5 numbers and print the square value of every element of the queue.
+
+======================================================================================================================================================================
 Q.11 Create a stack which contains ASCII values for alphabets and print Alphabets.
+
+======================================================================================================================================================================
