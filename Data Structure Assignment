@@ -146,6 +146,7 @@ int main()
 	
 	
 }
+======================================================================================================================================================================
 Q.5 Create an integer pointer for which memory is allocated dynamically.
 #include<stdio.h>
 #include<stdlib.h>
