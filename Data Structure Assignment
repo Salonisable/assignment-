@@ -736,6 +736,41 @@ Q.22 Create an array of string and search a perticular string using Linear Searc
 Q.23 Sort an array of 5 numbers using Insertion sort.
 ======================================================================================================================================================================
 Q.24 Make a tree which contains 3 nodes. A is Root node, B is left child and C is right child.
+#include<stdio.h>
+#include<stdlib.h>
+
+
+typedef struct tr
+{
+char data;
+struct tr *left;
+struct tr *right;
+}tree;
+
+ tree* createnode(char ch)
+{
+tree *n;
+n=(tree*)malloc(sizeof(tree));
+n->data=ch;
+n->left=NULL;
+n->right=NULL;
+return n;
+}
+
+int main()
+{
+tree *root,*n1,*n2;
+root = createnode('A');
+n1=createnode('B');
+n2=createnode('C');
+root->left=n1;
+root->right=n2;
+
+printf("\t%c\n",root->data);
+printf("%c\t",root->left->data);
+printf("\t%c\n",root->right->data);
+
+}
 ======================================================================================================================================================================
 Q.25 Create a tree of 3 nodes where root node displays the value as "Color" , Left node of root shows value as "Red" and right node shows value as Green. 
  and print all node values in using preorder traversal.
@@ -743,6 +778,64 @@ Q.25 Create a tree of 3 nodes where root node displays the value as "Color" , Le
 Q.26 Create a link list of 3 integers and print the elements of link list in reverse order using stack.
 ======================================================================================================================================================================
 Q.27 Write a program to crate an adjacency matrix(3 by 3) using graph , where create edges (0,1),(1,2),(1,1), Store the student age information.
+#include<stdio.h>
+
+
+int main()
+{
+    int ad[3][3];
+    
+    int age;
+    
+    int i,j;
+    
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            if(i==0 && j==1)
+            {
+                printf("Enter age : ");
+                scanf("%d",&age);
+                ad[i][j]=age;
+            }
+            
+            else if(i==1 && j==1)
+            {
+                printf("Enter age : ");
+                scanf("%d",&age);
+                ad[i][j]=age;
+            }
+            
+            else if(i==1 && j==2)
+            {
+                printf("Enter age : ");
+                scanf("%d",&age);
+                ad[i][j]=age;
+            }
+            
+            else
+            {
+                ad[i][j]=0;
+            }
+        }
+        
+    }
+    
+    for(i=0;i<3;i++)
+    {
+        for(i=0;i<3;i++)
+        {
+            printf("%d\t",ad[i][j]);
+        }
+        
+        printf("\n");
+    }
+}
+
+
+
+
 ======================================================================================================================================================================
 
 
