@@ -511,18 +511,593 @@ display(&e);
 
 ======================================================================================================================================================================
 Q.10 Create a queue which contains 5 numbers and print the square value of every element of the queue.
+#include<stdio.h>
+#define SIZE 5
+
+typedef struct queue
+
+{
+   int front;
+   int rear;
+   int elements[SIZE];
+
+}queue;
+
+void initialize(queue *sp)
+{
+    sp->front=-1;
+    sp->rear=-1;
+}
+
+void add(queue *sp,int item)
+{
+    if(sp->rear==SIZE-1)
+    printf("\nSTACK OVERFLOW");
+    else
+
+    sp->elements[++sp->rear]=item;
+}
+int rem(queue*sp)
+{
+    char x;
+    if(sp->front==-1)
+    printf("\nstack underflow");
+    else
+    x=sp->elements[sp->front++];
+    return x;
+}
+ 
+
+void display(queue *sp)
+{
+    int i;
+    for(i=sp->front;i<=sp->rear;i++)
+    {
+        printf("square values are :%d\n",(sp->elements[i])*(sp->elements[i]));
+    }
+}
+int main()
+{
+    queue e;
+    initialize(&e);
+    add(&e,5);
+    add(&e,10);
+    add(&e,15);
+    add(&e,20);
+    add(&e,25);
+
+    display(&e);
+}
 
 ======================================================================================================================================================================
 Q.11 Create a stack which contains ASCII values for alphabets and print Alphabets.
+#include<stdio.h>
+#include<stdlib.h>
+#define SIZE 27
+
+
+typedef struct st
+{
+    int top;
+    int elements[SIZE];
+}stack;
+
+
+void initialize(stack *sp)
+{
+    sp->top=-1;
+}
+
+
+void push(stack *sp,int item)
+{
+    if(is_full(sp))
+    printf("\nstack overflow");
+    
+    else
+    sp->elements[++sp->top]=item;
+}
+
+int pop(stack *sp)
+{
+    int x;
+    
+    if(is_empty(sp))
+    printf("\nstack underflow");
+    
+    else
+    x=sp->elements[sp->top--];
+    
+    return x;
+    
+}
+
+
+int is_full(stack *sp)
+{
+    if(sp->top==SIZE-1)
+    return 1;
+    
+    else
+    return 0;
+}
+
+
+int is_empty(stack *sp)
+{
+    if(sp->top==-1)
+    return 1;
+    
+    else
+    return 0;
+}
+
+
+void display(stack *sp)
+{
+    int v;
+    
+    for(v=sp->top;v!=-1;v--)
+    {
+        printf("%c\t",sp->elements[v]);
+    }
+}
+
+
+int main()
+{
+    stack v1;
+    
+    initialize(&v1);
+    
+    int v;
+    
+    for(v=70;v<90;v++)
+    {
+        push(&v1,v);
+    }
+    
+    display(&v1);
+}
 
 ======================================================================================================================================================================
 Q.12 Take 10 numbers from user, Make two stacks as Even & Odd, Even stack contains even numbers , Odd stack contains odd numbers.
+#include<stdio.h>
+#include<stdlib.h>
+#define SIZE 20
+
+typedef struct Odd_st
+{
+    int Atop;
+    int Aelements[SIZE];    
+}odd;
+typedef struct Even_st
+{
+    int Btop;
+    int Belements[SIZE];    
+}even;
+
+
+void Ainitialize(odd *sp)
+{
+    sp->Atop=-1;
+}
+void Binitialize(even *sp)
+{
+    sp->Btop=-1;
+}
+
+
+
+
+
+void Apush(odd *sp,char item)
+{
+        if(A_is_full(sp))    
+            printf("\nStack overflow\n");
+        else
+           
+       void Bpush(even *sp,int item)
+{
+        if(B_is_full(sp))    
+            printf("\nStack overflow\n");
+        else
+            sp->Belements[++sp->Btop]=item;
+}
+
+
+
+
+int Apop(odd *sp)
+{
+    int x;
+    if(A_is_empty(sp))
+        printf("\nStack underflow");
+    else
+        x=sp->Aelements[sp->Atop--];
+    return x;    
+}
+int Bpop(even *sp)
+{
+    int x;
+    if(B_is_empty(sp))
+        printf("\nStack underflow");
+    else
+        x=sp->Belements[sp->Btop--];
+    return x;    
+}
+
+
+
+
+
+int A_is_full(odd*sp)   
+{
+    if(sp->Atop == SIZE-1)      
+        return 1;
+    else
+        return 0;
+}
+int B_is_full(even *sp)   
+{
+    if(sp->Btop == SIZE-1)      
+        return 1;
+    else
+        return 0;
+}
+
+
+
+
+
+int A_is_empty(odd *sp)   
+{
+    if(sp->Atop == -1)          
+        return 1;
+    else
+        return 0;    
+}
+int B_is_empty(even *sp)   
+{
+    if(sp->Btop == -1)          
+        return 1;
+    else
+        return 0;    
+}
+void A_display(odd *sp)
+{
+    int i;
+    
+    for(i=sp->Atop;i!=-1;i--)
+    {
+        printf("%d ",sp->Aelements[i]);    
+    }
+    printf("\n");
+}
+
+
+
+
+
+void B_display(even *sp)
+{
+    int i;
+    
+    for(i=sp->Btop;i!=-1;i--)
+    {
+        printf("%d ",sp->Belements[i]);    
+    }
+    printf("\n");
+}
+
+
+
+
+
+int main()
+{
+    odd a;
+    even b;
+    int *s;
+    Ainitialize(&a);
+    Binitialize(&b);
+    int i,v;
+    for(i=0;i<10;i++)
+    {
+        printf("Enter Number :");
+        scanf("%d",&v);
+        {
+          int val=v%2;
+              switch(val)
+         {
+           case 0:
+                Apush(&a,v);
+                break;
+           case 1:
+                Bpush(&b,v);
+                break;
+         }
+        }
+    }
+    A_display(&a);
+    B_display(&b);
+    
+    
+}
 ======================================================================================================================================================================
 Q.13 Make a program to copy elements of one stack to another.
+#include<stdio.h>
+#include<stdlib.h>
+#define SIZE 5
+
+// Example of Stack to revrse a string
+typedef struct st1
+{
+	int top;
+	int elements[SIZE];	
+}stack1;
+
+typedef struct st2
+{
+	int top;
+	int elements[SIZE];	
+}stack2;
+
+// Initiazation of stack, top = -1
+
+void initialize(stack1 *sp1,stack2 *sp2)       // sp = &s1
+{
+	sp1->top=-1;
+	sp2->top=-1;
+}
+
+// Add an element on the top of the stack / PUSH operation
+
+void pushToStack1(stack1 *sp,int item)
+{
+		if(sp->top == SIZE-1)	
+			printf("\nStack overflow\n");
+		else
+			sp->elements[++sp->top]=item;
+}
+
+
+void pushToStack2(stack2 *sp,int item)
+{
+		if(sp->top == SIZE-1)	
+			printf("\nStack overflow\n");
+		else
+			sp->elements[++sp->top]=item;
+}
+// Delete an element from the stack / POP operation
+
+void copyToStack(stack1 *s1,stack2 *s2)
+{
+	int i;
+	
+	for(i=0;i<=s1->top;i++)
+	{
+		printf("%d ",s1->elements[i]);
+		pushToStack2(s2,s1->elements[i]);	
+	}	
+}
+
+void displayCopiedStack(stack2 *s)
+{
+	int i;
+	for(i=0;i<=s->top;i++)
+	{
+		printf("%d ",s->elements[i]);	
+	}	
+}
+
+int main()
+{
+	stack1 *s1;
+	stack2 *s2;
+	
+	s1=(stack1*)malloc(sizeof(stack1));
+	s2=(stack2*)malloc(sizeof(stack2));
+	
+	initialize(s1,s2);
+		
+	printf("==========\n");
+	printf("Stack : 1 \n===========\n");
+	
+	pushToStack1(s1,10);
+	pushToStack1(s1,20);
+	pushToStack1(s1,30);
+	pushToStack1(s1,40);
+		
+	copyToStack(s1,s2);
+	
+	printf("\n=========\n");
+	printf("Stack : 2 \n==============\n");
+	displayCopiedStack(s2);
+	}
 ======================================================================================================================================================================
 Q.14 Read 5 numbers from user and store it in a stack.
+#include<stdio.h>
+#include<stdlib.h>
+#define SIZE 7
+
+
+typedef struct st
+{
+    int top;
+    int elements[SIZE];
+}stack;
+
+
+void initialize(stack *sp)
+{
+    sp->top=-1;
+}
+
+
+void push(stack *sp,int item)
+{
+    if(is_full(sp))
+    printf("\nstack overflow");
+    
+    else
+    sp->elements[++sp->top]=item;
+}
+
+
+int pop(stack *sp)
+{
+    int x;
+    
+    if(is_empty(sp))
+    printf("\nstack underflow");
+    
+    else
+    x=sp->elements[sp->top--];
+    
+    return x;
+}
+
+
+int is_full(stack *sp)
+{
+    if(sp->top==SIZE-1)
+    return 1;
+    
+    else
+    return 0;
+}
+
+
+int is_empty(stack *sp)
+{
+    if(sp->top==-1)
+    return 1;
+    
+    else
+    return 0;
+}
+
+
+void display(stack *sp)
+{
+    int i;
+    
+    for(i=sp->top;i!=-1;i++)
+    {
+        printf("%d",sp->elements[i]);
+    }
+    
+    printf("\n");
+}
+
+
+int main()
+{
+    stack s1;
+    initialize(&s1);
+    
+    int i,j;
+    for(i=s1.top;i<4;i++)
+    {
+        printf("enter the number : ");
+        scanf("%d",&j);
+        push(&s1,j);
+    }
+    display(&s1);
+    
+}
+
 ======================================================================================================================================================================
 Q.15 Create a Link list of 5 nodes which stores information as a character.
+#include<stdio.h>
+#include<stdlib.h>
+
+
+typedef struct nd             
+{                          
+    char data;
+    struct nd *next;
+}node;
+
+
+typedef struct ls
+{
+    node *head,*tail;
+}list;
+
+
+node* createNode(char no)
+{
+    node *np;
+    
+    np=(node*)malloc(sizeof(node));  
+    
+    if(np == NULL)
+    {
+        printf("Memory not available");
+        exit(0);    
+    }
+    
+    np->data=no;
+    np->next=NULL;
+    
+    return np;
+}
+
+
+void initalize(list *p)
+{
+    p->head = NULL;
+    p->tail = NULL;
+}
+void insertAtail(list *p,char x)
+{
+    node *np;
+    np = createNode(x);
+    if(p->head==NULL)
+    p->head = np;
+    else
+    p->tail->next = np;
+    p->tail = np;
+}
+
+
+void traverse(list *p)
+{
+    node *sp;
+    sp = p->head;
+    
+    while(sp!=NULL)
+    {
+        printf("%c",sp->data);
+        sp=sp->next;
+    }
+}
+int main()
+{   
+    list *p;
+    
+    p = (list*) malloc(sizeof(list));
+    
+    if(p == NULL)
+    {
+        printf("MEMORY UNVAVAILABLE");
+        exit(0);
+    }
+    
+    initalize(p);
+    insertAtail(p,'A');
+    insertAtail(p,'B');
+    insertAtail(p,'C');
+    insertAtail(p,'D');
+    insertAtail(p,'E');
+    
+    traverse(p);
+    
+    free(p);
+    
+}
 ======================================================================================================================================================================
 Q.16 Write a program to count the number of nodes in the link list.
 #include<stdio.h>
