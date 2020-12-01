@@ -16,6 +16,12 @@ Q.2 Add a column in the Result table named as Grade
 alter table Result2 add grade varchar2(20); 
 ===============================================================================================================================================================================
 Q.3 Create a table marks which stores the marks of 5 subjects(physics,chemistry,maths,computer,english) and display the percentage. Store record of 5 students.
+
 ===============================================================================================================================================================================
 Q.4 Rename the table Result with StudentScore.
+
+alter table result2 rename to studentscore;
+select * from studentscore;
+desc studentscore;
+
 ===============================================================================================================================================================================
