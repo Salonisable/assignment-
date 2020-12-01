@@ -1,5 +1,21 @@
 Q.1 Create a table Result which stores the records of 5 students where the fields as 
     rollno, name, percentage
+    
+    create table Result2(rollno number,name varchar2(20),percentage number);
+
+select * from Result2;
+insert into Result2 values(1 ,'simran',40);
+insert into Result2 values(2 ,'saloni',50);
+insert into Result2 values(3 ,'simon',60);
+insert into Result2 values(4 ,'shalmon',70);
+insert into Result2 values(5 ,'petras',80);
+select * from result;
+===============================================================================================================================================================================
 Q.2 Add a column in the Result table named as Grade
+
+alter table Result2 add grade varchar2(20); 
+===============================================================================================================================================================================
 Q.3 Create a table marks which stores the marks of 5 subjects(physics,chemistry,maths,computer,english) and display the percentage. Store record of 5 students.
+===============================================================================================================================================================================
 Q.4 Rename the table Result with StudentScore.
+===============================================================================================================================================================================
