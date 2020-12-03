@@ -48,3 +48,33 @@ select * from Employees order by salary desc;
 ===============================================================================================================================================================================
 Q.9 Update the highest salary of the employee in above question to the minimum of all.
 ===============================================================================================================================================================================
+Q.10 create a table employee: eid, age, dept, salary. Show name of dept with lowest salary using group by.
+===============================================================================================================================================================================
+Q.11 Write a query to perform following operations on the table :
+      a) Create a table as Population :  State, popoulation
+      b) Find minimum population
+      c) Find maximum population
+      d) find average population
+      e) Display name of state population wise in descending order
+      f) Display name of state population wise in ascending order
+      ===============================================================================================================================================================================
+Q.12 Create a table ItemSales : Itemname, Sales, city  
+     Display the following output (Create a query which displays the Total sales citywise)
+      Item           Sales
+      ----           -----
+      RAM             4
+      Hard Disk       3
+      Mouse           1
+      ===============================================================================================================================================================================
+Q.13 Make a table which stores the email id and password where password should not be saved if the length is less than 8 character.
+===============================================================================================================================================================================
+Q.14 Make a table which stores the name and mobile no of customers. where mobile no can not saved in database if the mobile no is less than 10 digits.
+===============================================================================================================================================================================
+Q.15 Create a table person which stores the ID,name,email where define ID as primary key.Create another table Birthday which stores date of birth and ID.
+     Join both tables and create Foreign key in Birthday.
+     ===============================================================================================================================================================================
+Q.16 Create a table where records of an employee is maintained . 
+     Fields are EID (primary key), Ename (NOT NULL), officeno (Unique), DateOfJoining(NOT NULL),CompanyName(Default),Salary(Check is : salary > 0)
+     Create PersonnelDetails : ID( Foreign Key ) , Addres (NOT NULL), contactno(NOT NULL , UNIQUE) 
+     Join Both tables and Display output
+===============================================================================================================================================================================
