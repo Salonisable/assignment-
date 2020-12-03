@@ -26,12 +26,43 @@ desc studentscore;
 
 ===============================================================================================================================================================================
 Q.5 Create two tables A and B where A has 3 columns and B has 2 columns , Copy last two columns from table A to Table B.
+create table A(colum1 number,name varchar2(20),colum2 varchar2(20),colum3 varchar2(20));
+ create table B(colum1 number,name varchar2(20),colum2 varchar2(20));
+ 
+ select * from A;
+ select * from B;
+
+insert into A values(10,'jay','delhi');
+insert into A values(20,'raj','pune');
+insert into A values(30,'sam','goa');
+
+select * from A;
+
+insert into B values(10,'jay');
+insert into B values(20,'raj');
+
+select * from B;
+ 
+ insert into B(colum1,colum2) select colum1,colum2 from A;
+select * from B;
 ===============================================================================================================================================================================
 Q.6 Create a table which stores the information about a product . Fields are pid,pname,pqty,pcost. 
      a) Display records in ascending order of quantity.  
      b) Display records in descending order of product cost.
      c) Display record for the product where the cost is highest.
      d) Display the pid and pname of those products where the pcost is same.
+     create table product(pid number,pname varchar2(20),pqut varchar2(20),pcost varchar2(20));
+ 
+insert into product values(101,'toordal','1kg','83',100000);
+insert into product values(202,'moogdal','2kg','87',300000);
+insert into product values(303,'masoordal','3kg','45',40000);
+select * from product; 
+
+select * from product order by pqty asc;
+select * from product order by pcost desc;
+
+  select * from product where pcost >87;
+  select pid,pname from product where pcost = '40000' ;
      ===============================================================================================================================================================================
 Q.7 Create a table where insert 5 records like name,dob and city of a customer using single insert query.
 ===============================================================================================================================================================================
@@ -65,13 +96,48 @@ Q.12 Create a table ItemSales : Itemname, Sales, city
       RAM             4
       Hard Disk       3
       Mouse           1
+      
+create table Itemsales(itemname varchar2(20),sales number,city varchar2(20));
+
+insert into ItemSales values('Keyboard',300,'Delhi');
+insert into ItemSales values('Mouse',800,'Pune');
+insert into ItemSales values('USB',200,'Mumbai');
+
+select * from ItemSales;
+
+select city,sum(sales) as "total_sales" from Itemsales group by city;
+
+drop table Itemsales;
       ===============================================================================================================================================================================
 Q.13 Make a table which stores the email id and password where password should not be saved if the length is less than 8 character.
 ===============================================================================================================================================================================
 Q.14 Make a table which stores the name and mobile no of customers. where mobile no can not saved in database if the mobile no is less than 10 digits.
+create table Customers(name varchar2(20),mobileno number,check (mobileno >=1000000000));
+
+insert into Customers values('vaibhavi',5881798425);
+insert into Customers values('sonal',3907654);
+insert into Customers values('sai',390);
+
+select * from Customers;
 ===============================================================================================================================================================================
 Q.15 Create a table person which stores the ID,name,email where define ID as primary key.Create another table Birthday which stores date of birth and ID.
      Join both tables and create Foreign key in Birthday.
+     
+ create table Person(id number primary key,name varchar2(40),eid varchar2(40));
+create table Birthday(dob date,id number constraint fk_id references Person(id));
+
+insert into Person values(101,'Priya','priya@gmail.com');
+insert into Person values(102,'Neha','neha@gmail.com');
+
+
+insert into Birthday values(date '2020-12-14',101);
+insert into Birthday values(date '2020-10-18',102);
+
+select * from Person;
+
+select * from Birthday;
+
+select P.id,P.name,P.eid,B.dob from Person P,Birthday B where P.id=B.id
      ===============================================================================================================================================================================
 Q.16 Create a table where records of an employee is maintained . 
      Fields are EID (primary key), Ename (NOT NULL), officeno (Unique), DateOfJoining(NOT NULL),CompanyName(Default),Salary(Check is : salary > 0)
