@@ -62,8 +62,8 @@ select * from product order by pqty asc;
 select * from product order by pcost desc;
 
   select * from product where pcost >87;
-  select pid,pname from product where pcost = '40000' ;
-     ===============================================================================================================================================================================
+  select pid,pname from product where pcost = '40000' 
+  ===============================================================================================================================================================================
 Q.7 Create a table where insert 5 records like name,dob and city of a customer using single insert query.
 ===============================================================================================================================================================================
 Q.8 Create a table which stores the salary of 3 employees along with the name and display the names salary wise (highest first).
@@ -88,7 +88,7 @@ Q.11 Write a query to perform following operations on the table :
       d) find average population
       e) Display name of state population wise in descending order
       f) Display name of state population wise in ascending order
-      ===============================================================================================================================================================================
+ ====================================================================================================================================================================================
 Q.12 Create a table ItemSales : Itemname, Sales, city  
      Display the following output (Create a query which displays the Total sales citywise)
       Item           Sales
@@ -108,7 +108,7 @@ select * from ItemSales;
 select city,sum(sales) as "total_sales" from Itemsales group by city;
 
 drop table Itemsales;
-      ===============================================================================================================================================================================
+===============================================================================================================================================================================
 Q.13 Make a table which stores the email id and password where password should not be saved if the length is less than 8 character.
 ===============================================================================================================================================================================
 Q.14 Make a table which stores the name and mobile no of customers. where mobile no can not saved in database if the mobile no is less than 10 digits.
@@ -138,7 +138,7 @@ select * from Person;
 select * from Birthday;
 
 select P.id,P.name,P.eid,B.dob from Person P,Birthday B where P.id=B.id
-     ===============================================================================================================================================================================
+ ===============================================================================================================================================================================
 Q.16 Create a table where records of an employee is maintained . 
      Fields are EID (primary key), Ename (NOT NULL), officeno (Unique), DateOfJoining(NOT NULL),CompanyName(Default),Salary(Check is : salary > 0)
      Create PersonnelDetails : ID( Foreign Key ) , Addres (NOT NULL), contactno(NOT NULL , UNIQUE) 
