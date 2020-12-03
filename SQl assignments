@@ -36,6 +36,15 @@ Q.6 Create a table which stores the information about a product . Fields are pid
 Q.7 Create a table where insert 5 records like name,dob and city of a customer using single insert query.
 ===============================================================================================================================================================================
 Q.8 Create a table which stores the salary of 3 employees along with the name and display the names salary wise (highest first).
+create table Employees(name varchar2(20),salary number);
+
+insert into Employees values('mohit',11000);
+insert into Employees values('rohit',22000);
+insert into Employees values('jaya',33000);
+
+select * from Employees;
+
+select * from Employees order by salary desc;
 ===============================================================================================================================================================================
 Q.9 Update the highest salary of the employee in above question to the minimum of all.
 ===============================================================================================================================================================================
