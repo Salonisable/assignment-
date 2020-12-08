@@ -185,6 +185,8 @@ Q.16 Create a table where records of an employee is maintained .
      Fields are EID (primary key), Ename (NOT NULL), officeno (Unique), DateOfJoining(NOT NULL),CompanyName(Default),Salary(Check is : salary > 0)
      Create PersonnelDetails : ID( Foreign Key ) , Addres (NOT NULL), contactno(NOT NULL , UNIQUE) 
      Join Both tables and Display output
+     
+         
 ===============================================================================================================================================================================
 Q.17  Create a table Students ---- Rollno( Primary Key ), 
                                    Name (NOT NULL)
@@ -220,6 +222,18 @@ Q.25 Create an array of 5 names and print all names in Capital case.
 ===============================================================================================================================================================================
 Q.26 Create an array of 5 names and print all names with length in Capital case.
       "abc" ===>  ABC : 3 
+      
+           set serveroutput on
+DECLARE
+TYPE names IS VARRAY(5) OF VARCHAR(20);
+nm names;
+BEGIN
+nm := names('nimesh','abhishek','roma','saloni','hemant');
+for k in 1..5 loop
+dbms_output.put_line(UPPER(nm(k)) || ':' || length(nm(k)));
+end loop;
+end;
+
       ===============================================================================================================================================================================
 Q.27 CONVERT A SMALL CASE LETTER TO UPPERCASE AND PRINT IT.
 ===============================================================================================================================================================================
