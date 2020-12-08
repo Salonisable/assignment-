@@ -236,6 +236,15 @@ end;
 
       ===============================================================================================================================================================================
 Q.27 CONVERT A SMALL CASE LETTER TO UPPERCASE AND PRINT IT.
+
+declare
+s1 varchar2(20) :='hello world';
+s2 varchar2(20) :='india';
+
+begin
+dbms_output.put_line(UPPER(s1));
+dbms_output.put_line(UPPER(s2));
+end;
 ===============================================================================================================================================================================
 Q.28 Create a procedure which accepts one parameter as a radius of circle. Declare pi as constant in the procedure and calculate area of circle & print the area in 
      other PLSQL Block.
