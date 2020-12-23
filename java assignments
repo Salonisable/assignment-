@@ -1,1 +1,93 @@
 
+Q.1 Create a program to Assign username & password in a method and display the username, password in a different function.
+Q.2 Write a program to Define employee Company as static and display the details of employee like eid,ename,salary with company name for 5 employees.
+Q.3 Create a method in a class which accepts a double and integer parameters and display the multiplication of passed values.
+Q.4 Write a program where a class is having a function as display() which declares a city code as a local variable in it and give some default city code value in it. 
+    Display () method display the city name which is passed to this method along with the city code.
+Q.5 Write a program to enter a year and check if the year is a leap year or not.
+Q.6 Create a program to check for a number entered by user is Positive , negative or zero.
+Q.7 Write a program to enter the height of a person in cm and weight of a person in kg, Calculate the BMI. If BMI value is less tha 18.5 then show "Underweight",
+     BMI is in range from 18.5 to 24.9 show "Normal Weight" , If range is 25 to 25.9 then show "Overweight" otherwise show "Obesity"
+Q.8 Create a class Employee . Declare name, yearOfExperiance, Salary. Create a method which takes the details from user. Take records of 5 employees using Array of 
+    objects. Create a method which checks the years of experiance of an employee. If Experiance is more than 3 years then Give 5000/- Rs Bonus to the employees .
+    If Experiance is more than 1 year & less than 3 years then Give bonus of 1000/- Rs. If Experiance is less than 1 year , no bonus will be given. Display the 
+    Updated details of every employee.
+Q.9 Write a program to create a Menu based program where perform the following operations.
+    Product (Class) : pid,pname,Description,cost
+    1. Display List of 5 products.
+    2. Display all products in Capital case
+    3. Display the Total cost of All products.
+    4. Dipslay average Cost of All products.
+    5. Display only Product Name and cost.
+Q.10 Create an array of names of 3 students and display names with length.
+Q.11 Make an array of 10 numbers and print the average of only even numbers.
+Q.12 Create an array of 5 double values and use foreach loop to print every value.
+
+Q.13 Write a program to make a class as Factorial where calculate the factorial in a function the function returns the factorial of the passed number to this function. 
+     Print the factorial of the number.
+
+Q.14 Create a Class Alphabets which is printing Capital case alphabets in its member method. Create another Class where a main function resides. In main method create 
+    the object of Alphabets class and call the method which is printing alphabets.
+
+Q.15 Write a program to create a method in a class which takes the first name as first parameter and last name as second parameter. This method returns the full name. 
+    Print full name.
+
+Q.16 Write a program to overload a method named as getResult() 3 times , first definition prints the cube of passed number. Second function prints square of passed 
+     number. Third definition print that number.
+
+Q.17 Write a program to find the sum of digits of a number.
+
+Q.18 Write a program to create two objects of a class named as Numbers. In which there is a function getMax(). Assign a value for a number to every object and 
+     compare two objects together and print the maximum value
+Q.19 Create an interface named as Calculator and create a method in it as getResult(). 
+     7 class are to be defined which are implementing Calculator interface.
+     Class A will return factorial of a number.    (Vishal)
+     Class B will return square of a number.       (Saloni)
+     Class C will return maximum of two numbers.   (Hemant)
+     Class D will print numbers from 1 to 50.      (Josephine)
+     Class E will return the sum of 5 digit number. (Nimesh)
+     Class F will return the sum of 5 values in an array.  (Abhishek)
+     Class G will return the temperature in celcius for the given ferhenite value. (Nilesh)
+Q.20 Write a program to take first name and lastname as a command line arguments and print the full name in capital case along with the length of fullname.
+Q.21 Create a class Person. Create name,mobile,age as instance variables . Make getters and setters and display the records of 3 cusomers using array of objects and 
+     print records.
+Q.22 Define name and salary of an employee both as a string variable. Define a method which updates the salary of an employee by 1000. Print updated salary with name.
+Q.23 Write a program to declare a sring object using literal and assign a string "Hello" in it. Print the Hello using charAt() method in Capital Case.
+Q.24 Write a program to print the length of a string without using length attribute.
+Q.25 Take user name and password from user.If user name is "admin" and password is "Abcd1234" then print Welcome UserName . Compare userName using equalIgnoreCase(). 
+     Compare password without using equalIgnoreCase().
+Q.26 create a class Result where marks of 5 subjects are taken from user in a method as InputMarks() and print the percentage and grade based on percentage in a 
+     different method as ShowPercentage(). Print the Highest and Lowest Marks in a subject.
+Q.27 Display the following Pattern :
+       1
+       1 2
+       1 2 3
+       1 2 3 4
+       1 2 3 4 5
+
+Q.28 Declare a string as "Welcome to Java Programming" , Print "Java" from this String. 
+
+Q.29 Write a program to reverse the entered string without using reverse method.
+
+Q.30 Make an array of 5 integers and print elements in reverse order.
+
+Q.31 Make an array of 10 numbers and print the sum of all even elements.
+
+Q.32 Make an array of 3 integers and find the maximum of 3 nos and print it.
+
+Q.33 Make an array of 5 integers and check any enetered no exists in the array or not.If Exists then print the array element with position of the element in the array.
+
+Q.34 Create an interface Area which has a method getArea(). 
+    Create 3 Classes circle, Triangle, Rectangle which are implementing the method. Calculate the area and show it.
+Q.35 Create an Abstract Class student which has an abstract method showDetails().
+    Create an interface Marks which has a variable TotalMarks=500 and a method getMarks().
+    Create a Class Result which extends student class and implements Marks interface.
+    In Result class calculate the Percentage of a student and Print Result.
+
+Q.36 create a final class in which a method Factorial() returns the factorial of the passed number.Make another class where factorial is to be displayed in a method showFactorial()
+Q.37 Write a program to Make a class Numbers which has a method getNumbers() which takes two numbers from user. Create another class Addition which inherits
+     class Numbers and does Addition of two numbers in a method calculate() and print the addition.
+Q.38 Create your Exception class named as PasswordLengthException and take username and password from the user . If the length of the password is less than 8 characters
+     then throw the PasswordLengthException on giving a message as "Password is too short" otherwise Show the message as "Welcome UserName".
+     
+     
