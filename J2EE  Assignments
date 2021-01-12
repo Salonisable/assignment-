@@ -1,11 +1,278 @@
 
 Q.1 Create a servlet on extending HttpServlet class which prints a Welcome message on the WebPage.
+package org.demo;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class Ass1
+ */
+public class Ass1 extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public Ass1() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+		
+		
+		
+		
+			PrintWriter out=response.getWriter();
+			
+			
+		out.print(" WELCOME ");
+			
+			out.close();
+		}
+		
+	
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}
+======================================================================================================================================================================
 Q.2 Create a Servlet which accepts two numbers as parameters in the form of query string and prints the sum,multiplication,Division,Subtraction
+package org.demo;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class Ass2
+ */
+public class Ass2 extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public Ass2() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		 PrintWriter out=response.getWriter();
+			
+			//String name=request.getParameter("name");
+			
+			
+			  int num1=Integer.parseInt(request.getParameter("num1"));
+			  int num2=Integer.parseInt(request.getParameter("num2"));
+			  
+			  out.print("<br>Addition : ");
+			response.getWriter().print((num1+num2));
+			
+			out.print("<br>Multiplicaition : ");
+			response.getWriter().print((num1*num2));
+			
+			out.print("<br>Subtraction : ");
+			response.getWriter().print((num1-num2));
+			
+			out.print("<br>Division : ");
+			response.getWriter().print((num1/num2));
+			  
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}
+
+=================================================================================================================================================================
 Q.3 Create a Servlet which accepts firstname & lastname from query string and display the fullname in Capital case along with length.
+package org.demo;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class Ass3
+ */
+public class Ass3 extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public Ass3() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String firstname=request.getParameter("firstname");
+		String lastname=request.getParameter("lastname");
+		
+		response.getWriter().print(firstname.toUpperCase()+" "+lastname.toUpperCase());
+		
+		
+		response.getWriter().print(firstname.length()+" "+lastname.length());
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}
+
+=================================================================================================================================================================
 Q.4 Create 2 servlets and make a web.xml file in which a Integer value is defined as a parameter. First servlet is printing the square value of the parameter and second 
     servlet is printing the factorial of the parameter.
+    =================================================================================================================================================================
 Q.5 Create 2 servlets and one web.xml file in which name is set as a parameter for first servlet and city is set as a parameter for second servlet. First servlet prints
     the length of the name and second servlet prints the city name in Capital case.
+    servlet-1
+    package org.demo;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class Ass5a
+ */
+public class Ass5a extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public Ass5a() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		 PrintWriter out=response.getWriter();
+			
+			ServletConfig sc=getServletConfig();  // SERVLET CONFIG
+			
+			String prname=sc.getInitParameter("Name");
+					out.print("<br>Name : "+prname.length());
+					
+				
+					
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}
+
+servlet-2
+package org.demo;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class Ass5b
+ */
+public class Ass5b extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public Ass5b() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		 PrintWriter out=response.getWriter();
+			
+			ServletConfig sc=getServletConfig();  // SERVLET CONFIG
+			
+			String prname=sc.getInitParameter("City");
+					out.print("<br>City : "+prname.toUpperCase());
+					
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}
+
+    =================================================================================================================================================================
 Q.6 Create a servlet which displays all records of a table.
+=================================================================================================================================================================
 Q.7 Create a servlet which accepts id from the URL and delete the record for that id.
-Q.8 Create a form which accepts ID and City and saves the data in the database.
+=================================================================================================================================================================
+Q.8 Create a form which accepts ID and City and saves the data in the database
+=================================================================================================================================================================
