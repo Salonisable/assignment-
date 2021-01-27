@@ -1,6 +1,117 @@
 1.Create a Table of 3 columns and 4 records . Headings are : Sno, Name, Photo.
+<html>
+<head><title>students record</title></head>
+<body>
+<table border=1>
+<caption>Students Record</caption>
+<tr>
+<th>Sno</th>
+<th>Name</th>
+<th>Photo</th>
+</tr>
+<tr>
+<td>01</td>
+<td>saloni</td>
+<td><img src="image1.jpg" width="100" height="100" ></td>
+</tr>
+<tr>
+<td>02</td>
+<td>shalmon</td>
+<td><img src="https://i.pinimg.com/236x/18/af/35/18af351094a7337c8aec6f6b27c8aa14.jpg"></td>
+</tr>
+
+<tr>
+<td>03</td>
+<td>simon</td>
+<td><img src="https://image.shutterstock.com/image-photo/photo-on-passport-young-man-260nw-1230187765.jpg"></td>
+</tr>
+<tr>
+<td>04</td>
+<td>simran</td>
+<td><img src="image2.jpg" width="100" height="100"></td>
+</tr>
+</table>
+</body>
+
+</html>
+
+================================================================================================================================================================================
 2.Create a hyperlink on the web page and this link will switch to other webpage. In second page there is a link as "Back" which will display the first page.
+A :<html>
+<body>
+<h1>Webpages</h1>    
+    
+<a href="ass2B.html">Click</a>
+    
+<h1>first page</h1>
+</body>
+</html>
+B:    
+<html>
+<body>
+<h1>Webpages</h1>     
+<a href="ass2A.HTML">Back</a>  
+ <h1>second page</h1>
+</body>
+</html>
+
+================================================================================================================================================================================
 3.Create a Paragraph and apply the tags on this paragraph : bold,italic,underline, Mark, strike ,superscript and subscript, emphasis,strong,big.
+
+<html>
+<head>
+<title> my self </title>
+</head>
+<body>
+<b> my name is saloni sable </b> 
+ <i> i stay in pune </i> 
+<u> i study in don bosco sr. night college </u> 
+i like  <mark>black</mark> colour </body>
+<strong> i love dance</strong>
+<big> i m in sy.bcom </big> 
+<strike>i like watching tv </strike>
+<em>i like painting</em>
+<sup>4</sup> -x<sub>1</sub>        
+</body>
+</html>
+================================================================================================================================================================================
 4.Create an image in the web page which has the width as 300 and height as 400 and display the title as "MyImage". Create same image as a hyperlink , clicking on the image will 
   show the description about the image.
+ A: <html>
+<body>
+   
+    <a href="Ass4a.html" title="MyImage" target="_blank"><img src="small-flowers.jpg" border=5></a>  
+    
+</body>
+</html>
+B:<html>
+    
+<body style="color: red">
+    
+    <p>Along with the muncipal corporation limits of Pimpri Chinchwad and the three cantonment towns of Camp, Khadki and Dehu Road, Pune forms the urban core of the eponymous Pune Metropolitan Region (PMR).[24] According to the 2011 census, the urban area has a combined population of 5.05 million while the population of the metropolitan region is estimated at 7.4 million.[9] Situated 560 metres (1,837 feet) above sea level on the Deccan plateau on the right bank of the Mutha river,[25] Pune is also the administrative headquarters of its namesake district. In the 18th century, the city was the seat of the Peshwas, the prime ministers of the Maratha Empire and one of the most important political centres on the Indian subcontinent.</p>
+    
+</body>
+</html>
+  ================================================================================================================================================================================
 5.Create a list of 3 website names and create every list item as a hyperlink.  
+<html>
+<body>
+<li>
+<a href="https://www.google.com/">Click on google</a>
+
+</li>
+    
+<li>
+<a href="https://www.youtube.com/">Click on youtube</a>
+
+</li>
+    
+<li>
+<a href="https://www.icallinsurance.com/">Click on ICALL INSURANCE</a>
+
+</li>
+    
+</body>
+
+</html>
+================================================================================================================================================================================
