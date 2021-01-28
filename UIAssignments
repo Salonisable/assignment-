@@ -115,3 +115,186 @@ B:<html>
 
 </html>
 ================================================================================================================================================================================
+6.Create a HomePage where a unorderd list is created in which the list items are the hyperlinks . On clicking a hyperlink the respective page should open.
+page1:<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<jsp:include page="header.jsp"></jsp:include>
+
+ 
+
+<pre>
+
+ 
+my name is saloni 
+i stay in pune
+
+ 
+
+</pre>
+<jsp:include page="footer.jsp"></jsp:include>
+</body>
+</html>
+page2:<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<jsp:include page="header.jsp"></jsp:include>
+
+ 
+
+<img alt="flower" src="https://cdn.britannica.com/84/73184-004-E5A450B5/Sunflower-field-Fargo-North-Dakota.jpg"
+height="200";width="100">
+<jsp:include page="footer.jsp"></jsp:include>
+</body>
+</html>
+header:<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<header>
+<p>
+THIS IS THE HEADER.JSP
+</p>
+</header>
+</body>
+</html>
+footer:<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<footer>
+<p style="text=align: center;">
+created@Jan 2021
+
+ 
+
+</p>
+
+ 
+
+</footer>
+</body>
+</html>
+style:@charset "ISO-8859-1";
+header
+        {
+            background-color: aquamarine;
+        }
+    
+        
+         footer
+        {
+            background-color: blue;
+        }
+  home:<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+ <ul>
+         
+ <li>
+               
+ <a href="ass6.jsp">page1 CLICK</a>
+   
+ </li>
+               
+ <li>
+               
+  <a href="ass6B.jsp">PAGE2 CLICK</a>
+   
+   </li>
+          
+   <li>
+               
+    <a href="header.jsp">header CLICK</a>
+   
+ </li>
+         
+  <li>
+               
+ <a href="footer.jsp">footer CLICK</a>
+   
+</li>
+ </ul>
+
+</body>
+</html>
+================================================================================================================================================================================
+7 Create a LoginPage in which background color of textbox should be skyblue. Placeholder should be applied and password length must be atleast 8 characters.
+<head>
+</head>
+
+<body>
+
+<form>
+<b>
+
+<label>ENTER NAME<input type="text" style="background-color:skyblue"></label><br>
+<br>
+
+<label >ENTER PASSWORD <input type="password" style="background-color:skyblue" placeholder="write the password here" minlenght="8"></label><br>
+<br> 
+
+<input type="submit" value="SUBMIT"><input type="reset" value="CLEAR">
+
+</b>
+ 
+</form>
+
+</body>
+
+</html>
+================================================================================================================================================================================
+8 Make a page where create a selection box of cities and a textarea where the information about city is to be entered. Once click on submit button the data is to be 
+  stored in the database table as City along with description.
+  ================================================================================================================================================================================
+9 Make an ordered list in reversed manner.
+<html>
+<body>
+<h1>students data</h1>
+<ol reversed>
+   <li>saloni</li>
+   <li>mohini</li>
+   <li>josephine</li>
+   <li>nimesh</li>
+   <li>vishal</li>
+   <li>hemat</li>
+   <li>abhishek</li>
+   <li>nilesh</li>
+   <li>simon</li>
+   <li>saiyog</li>
+</ol>
+</body>
+</html>
+
+================================================================================================================================================================================
+10 Make a Page which includes contents of a text file in the middle of the page. Create two such pages and link them together using hyperlinks. Add some header and footer
+   in both pages where header background color should be pink and some text is displayed as heading. Footer will display the todays date in red color.
+================================================================================================================================================================================
