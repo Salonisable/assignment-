@@ -259,7 +259,7 @@ header
 <label>ENTER NAME<input type="text" style="background-color:skyblue"></label><br>
 <br>
 
-<label >ENTER PASSWORD <input type="password" style="background-color:skyblue" placeholder="write the password here" minlenght="8"></label><br>
+<label >ENTER PASSWORD <input type="password" style="background-color:skyblue" placeholder="write the password here" maxlenght="8"></label><br>
 <br> 
 
 <input type="submit" value="SUBMIT"><input type="reset" value="CLEAR">
