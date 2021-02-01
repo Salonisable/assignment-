@@ -366,3 +366,144 @@ page2:
 </html>
 
 ================================================================================================================================================================================
+11 Make a form which accepts name and date of birth of a person and stores it in the database.Use date type to take date of birth.
+================================================================================================================================================================================
+12 Create 3 input text boxes and a submit button. Apply the background color for all text boxes as pink using class selector and change the font color of the submit button
+    using the id selector.
+    <html>
+<head>
+    
+<style>
+    
+    .c1
+    {
+        background-color: pink;
+        
+    }
+    
+    #id1
+    {
+          color: red;
+    }
+    
+</style> 
+</head>
+<body>
+    
+<form>
+      
+Enter Name<input type="text" class="c1"><br>
+
+Enter Age<input type="number" class="c1"><br>
+
+Enter Roll no<input type="number" class="c1"><br>
+    
+<input type="submit" value="SUBMIT" id="id1"><br>
+ 
+</form>  
+    
+</body>
+
+</html>
+   ================================================================================================================================================================================
+13 Create a group selector to set the padding (25px) of a division and a paragraph text.
+<html>
+
+ <head>
+<style>
+div,p
+{
+padding: 25px;
+
+}
+</style>
+</head>
+<body>
+<div>Welcome to my websites</div>
+<p>Hello World</p>
+<a href="Ass1.html">click</a>
+</body>
+</html>
+================================================================================================================================================================================
+14 Create a division and set the left & top margin to 20px and 30px and also set the background color to green and padding to 50px.<html>
+<head>
+<style>
+div
+{
+margin-left: 20px;
+margin-top: 30px;
+background-color: green;
+padding: 50px;
+}
+</style>
+</head>
+<body>
+<div>Hello World</div>
+</body>
+</html>
+
+================================================================================================================================================================================
+15 Make a table with collapse border and color of border is Blue and alignment of text should be bottom right. Background color of the heading should be pink . Font size
+   of text written inside table body is 20px.
+   <html>
+<head>
+<style>
+table,th,td
+{
+border-collapse: collapse;
+border: 2px solid blue;
+text-align: right;
+vertical-align: bottom;
+
+}
+th
+{
+background-color: pink;
+}
+
+tbody
+{
+font-size: 20px;
+}
+</style>
+</head>
+<body>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>City</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>saloni</td>
+<td>Pune</td>
+</tr>
+<tr>
+
+<td>frooti</td>
+<td>goa</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>
+   ================================================================================================================================================================================
+16 Take three integer variables in Javascript.Assign values to first two variables. Print the Sum in the Heading tag and console window.
+==============================================================================================================================================
+17 Assign firstname & lastname and print the full name in the alert box.
+================================================================================================================================================================================
+18 Display the image with the border 5px , Brown color and image should be displayed in the right of the page along with the Paragraph .Set the image width and heigth
+   to 150px and 150px.
+   ================================================================================================================================================================================
+19 Create a JSP Home Page with a Menu bar in it. Create 3 web pages and make a menubar for these links as a vertical menu bar. When clicked on any link , the respective
+   webpage should be displayed and all web pages should be linked to each other.
+   ================================================================================================================================================================================
+20 Create a form with 2 fields and set the Autofocus property to the first field.
+================================================================================================================================================================================
+21 Create a Hyperlink and apply the linkcolor accordingly : 
+   Activelink : yellow
+   visitedLink: Green
+   ================================================================================================================================================================================
+
