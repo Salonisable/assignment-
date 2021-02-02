@@ -493,17 +493,107 @@ font-size: 20px;
 16 Take three integer variables in Javascript.Assign values to first two variables. Print the Sum in the Heading tag and console window.
 ==============================================================================================================================================
 17 Assign firstname & lastname and print the full name in the alert box.
+<html>
+<head>
+
+</head>
+<body>
+ <!--3 way of javascript -->   
+<script>
+   function fun()
+    {
+        var firstname="saloni";
+         var lastname="Sable";
+        
+          //alert(firstname+lastname);
+        
+       alert(firstname+" "+lastname+" ")
+    }
+ 
+</script> 
+    <button onclick="fun()">Click</button>
+</body>
+</html>
 ================================================================================================================================================================================
 18 Display the image with the border 5px , Brown color and image should be displayed in the right of the page along with the Paragraph .Set the image width and heigth
    to 150px and 150px.
+   <html>
+
+<head>
+   <style>
+       
+       img
+       {
+        
+           border: 5px solid brown;
+           width: 150px;
+           height: 150px;
+        
+           float: right;
+       }
+       
+       
+    </style> 
+    
+</head>
+    <body>
+        <p>It's a smiley face. :) is used in texting, and it is usually changed to something like: There are many different emojis used, in their letter format. :P is a tongue sticking out, :D is a huge grin, and :| is a sort of neutral face. ... What is the meaning of :** in a text message?</p>
+    <img src="image1.jfif">
+        <p>It's a smiley face. :) is used in texting, and it is usually changed to something like: There are many different emojis used, in their letter format. :P is a tongue sticking out, :D is a huge grin, and :| is a sort of neutral face. ... What is the meaning of :** in a text message?</p>
+        
+    </body>
+</html>
    ================================================================================================================================================================================
 19 Create a JSP Home Page with a Menu bar in it. Create 3 web pages and make a menubar for these links as a vertical menu bar. When clicked on any link , the respective
    webpage should be displayed and all web pages should be linked to each other.
    ================================================================================================================================================================================
 20 Create a form with 2 fields and set the Autofocus property to the first field.
+<html>
+<head>
+  <style>
+    
+    
+    </style>
+            
+</head>
+<body>
+   <form>
+  
+    First Name<input autofocus type="text"> <br>    
+    Last Name<input type="text">   
+ 
+       <input type="submit" value="Submit">
+   </form> 
+</body>
+       
+</html>
 ================================================================================================================================================================================
 21 Create a Hyperlink and apply the linkcolor accordingly : 
    Activelink : yellow
    visitedLink: Green
+    <html>
+<head>
+<style>
+ a:active
+        
+        {
+            color: yellow;
+        }
+    
+      a:visited
+    
+        {
+          color: green;
+        }
+    
+</style>    
+    
+</head>
+
+<body>
+<a href="page10.html">Click</a>
+    
+</body>
+</html>
    ================================================================================================================================================================================
 
