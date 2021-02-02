@@ -592,3 +592,90 @@ float: right;
 </html>
    ================================================================================================================================================================================
 
+22 Create a Javascript file which is included in HTML Page.In this file Assign Name , age and City of a person and display these values as a heading in Red color.
+
+================================================================================================================================================================================
+
+23 Create a Javascript function which accepts a number and returns the cube of the number and print the cube.
+<html>
+<head>
+
+</head>
+<body>
+<script>
+function fun(num)
+{
+document.write("Cube : "+(num*num*num));
+
+ }
+
+fun(10);
+</script>
+</body>
+</html>
+================================================================================================================================================================================
+
+24 Make a function expression which returns the area of circle where PI should be defined as constant.
+<html>
+<head>
+
+</head>
+<body>
+<script>
+
+// function expression
+
+const PI=3.14;
+var radius=5;
+var Area=PI*5*5;
+var myfunction=function()
+{
+document.write("Area of Circle : "+Area);
+
+}
+
+myfunction();
+</script>
+</body>
+</html>
+================================================================================================================================================================================
+
+25 Make an integer array of 5 numbers in a function and print the average of array.
+================================================================================================================================================================================
+
+26 Create an array of 5 names and print the last two names on creating subarray. Add a name in the 2nd index of the array and print array in reverse order
+<html>
+<head>
+</head>
+<body>
+<script>
+var Name=new Array("hemant","hemant","joshphine","saloni");
+document.write("<ol>");
+document.write("<li>"+Name[0]+"</li>");
+document.write("<li>"+Name[1]+"</li>");
+document.write("<li>"+Name[2]+"</li>");
+document.write("<li>"+Name[3]+"</li>");
+document.write("</ol>");
+var subarray=Name.slice(-2)
+document.write("<br>");
+document.write(subarray);
+
+Name.splice(1,0,"Roma");
+
+document.write("<ol>");
+document.write("<li>"+Name[0]+"</li>");
+document.write("<li>"+Name[1]+"</li>");
+document.write("<li>"+Name[2]+"</li>");
+document.write("<li>"+Name[3]+"</li>");
+document.write("</ol>");
+
+document.write("<br>");
+document.write(Name.reverse());
+</script>
+</body>
+</html>
+================================================================================================================================================================================
+
+
+
+ 
