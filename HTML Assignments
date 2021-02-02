@@ -517,31 +517,26 @@ font-size: 20px;
 ================================================================================================================================================================================
 18 Display the image with the border 5px , Brown color and image should be displayed in the right of the page along with the Paragraph .Set the image width and heigth
    to 150px and 150px.
-   <html>
+  <html>
 
 <head>
-   <style>
-       
-       img
-       {
-        
-           border: 5px solid brown;
-           width: 150px;
-           height: 150px;
-        
-           float: right;
-       }
-       
-       
-    </style> 
-    
+<style>
+img
+{
+border: 5px solid brown;
+width: 150px;
+height: 150px;
+border-color: brown;
+float: right;
+}
+
+</style>
 </head>
-    <body>
-        <p>It's a smiley face. :) is used in texting, and it is usually changed to something like: There are many different emojis used, in their letter format. :P is a tongue sticking out, :D is a huge grin, and :| is a sort of neutral face. ... What is the meaning of :** in a text message?</p>
-    <img src="image1.jfif">
-        <p>It's a smiley face. :) is used in texting, and it is usually changed to something like: There are many different emojis used, in their letter format. :P is a tongue sticking out, :D is a huge grin, and :| is a sort of neutral face. ... What is the meaning of :** in a text message?</p>
-        
-    </body>
+<body>
+<p>Teddy bears got their name from the story that Teddy Roosevelt refused to shoot a bear cub while on a hunting trip in 1902. - The first toy stuffed bear was created by German toymaker Margarete Steiff. She created a soft plush with movable arms and legs and a friendly face after taking her nephew to the zoo in 1903.</p>
+<img src="https://images-na.ssl-images-amazon.com/images/I/61-l8S81xVL._SL1500_.jpg">
+<p>The world's largest stitched teddy bear is proudly American! The 55-foot-4 creation was made in 2008 and is named C.T.Dreams, which stands for Connect the Dreams. You can go visit it in Wichita, Kansas.Are you a teddy bear collector? So is Jackie Miley, from Hilly City, South Dakota. She has the world’s biggest teddy bear collection, totaling 8,026 bear friends in 2012. </p>
+</body>
 </html>
    ================================================================================================================================================================================
 19 Create a JSP Home Page with a Menu bar in it. Create 3 web pages and make a menubar for these links as a vertical menu bar. When clicked on any link , the respective
@@ -591,7 +586,7 @@ font-size: 20px;
 </head>
 
 <body>
-<a href="page10.html">Click</a>
+<a href="page4.html">Click</a>
     
 </body>
 </html>
