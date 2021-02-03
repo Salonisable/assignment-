@@ -491,6 +491,22 @@ font-size: 20px;
 </html>
    ================================================================================================================================================================================
 16 Take three integer variables in Javascript.Assign values to first two variables. Print the Sum in the Heading tag and console window.
+
+<html>
+<head>
+</head>
+<body>
+<h1>Sum</h1> 
+<script>
+var x=2;
+var y=3;
+var sum=x+y;
+document.write("Sum :"+sum+"<br>");
+console.log(sum);
+</script>
+</body>
+
+</html>
 ==============================================================================================================================================
 17 Assign firstname & lastname and print the full name in the alert box.
 <html>
@@ -541,6 +557,72 @@ float: right;
    ================================================================================================================================================================================
 19 Create a JSP Home Page with a Menu bar in it. Create 3 web pages and make a menubar for these links as a vertical menu bar. When clicked on any link , the respective
    webpage should be displayed and all web pages should be linked to each other.
+   
+   
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<style>
+ 
+    h1
+        {
+            color: saddlebrown;
+            background-color: yellow;
+        }
+
+ 
+
+         h2
+        {
+            
+               background-color: pink;
+        }
+        
+         h3
+        {
+            color: purple;
+        }
+        
+      
+        
+        
+
+</style>
+</head>
+<body>
+   <b>
+       <h8>THIS IS MENU PAGE</h8>
+       </b>
+<ul>
+
+ 
+
+ <h1>
+<li><a href="page1.jsp">ClICK ON PAGE1</a></li>
+</h1>
+
+ 
+
+<h2>
+<li><a href="page2.jsp">ClICK ON PAGE2</a></li>
+</h2>
+
+ 
+
+<h3>
+<li><a href="page3.jsp">ClICK ON PAGE3</a></li>
+</h3>
+
+ 
+     
+</ul>
+</body>
+</html>
    ================================================================================================================================================================================
 20 Create a form with 2 fields and set the Autofocus property to the first field.
 <html>
@@ -641,6 +723,7 @@ myfunction();
 ================================================================================================================================================================================
 
 25 Make an integer array of 5 numbers in a function and print the average of array.
+
 ================================================================================================================================================================================
 
 26 Create an array of 5 names and print the last two names on creating subarray. Add a name in the 2nd index of the array and print array in reverse order
@@ -675,7 +758,84 @@ document.write(Name.reverse());
 </body>
 </html>
 ================================================================================================================================================================================
+27 Make an Object as person which has firstname and lastname and print the Full name in capital.
+<html>
+<head>
+</head>
 
+ 
+
+<body>
+    
+     <script>
+           
+            var person=
+                {
+                    "firstname": "saloni",
+                    "lastname": "sable",
+                }
+            
+            document.write(person.firstname.toUpperCase()+" "+person.lastname.toUpperCase());  
+                
+    </script>
+    
+</body>
+</html>
+================================================================================================================================================================================
+28 Create an array of 5 cities and print the city names in reverse order.
+<html>
+<head>
+
+
+</head>
+<body>
+    <script>
+         var city=new Array("Pune","Mumbai","Chennai","Delhi","Kerala");
+        
+         document.write("<br>");
+        document.write(city.reverse());
+    </script>
+</body>
+</html>
+ 
+================================================================================================================================================================================
+29 Take two numbers as input in the dialogbox and calculate sum and print it.
+
+================================================================================================================================================================================
+30 Create a confirm box on giving some message.If User clicks Ok button , then background color of the body should be green, If user clicks on cancel button then 
+    background color should be red.
+  <html>
+    <head>
+    </head>
+    <body>
+   
+        <h1 id="id1" style="background-color: green"></h1>
+       
+        <h1 id="id2" style="background-color: red"></h1>
+        <script>
+            var st=confirm("Are you confirm ?");
+           
+                    
+            if(st)
+                {
+                    var message="Welcome to my website" ;
+                    document.getElementById("id1").innerHTML=message;
+                }
+            else
+                {
+                    var message="Please try again !";
+                    document.getElementById("id2").innerHTML=message;
+                   
+                }
+        </script>
+    </body>
+</html>
+ 
+
+    
+    ================================================================================================================================================================================
+
+ 
 
 
  
