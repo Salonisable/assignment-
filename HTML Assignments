@@ -1029,13 +1029,159 @@ document.write("Sum of "+num1+" and "+num2+" is "+sum);
 
   
 37 Create two buttons red and green .Change the font color of the first element of 2 unordered list according to button.
+<html>
+    
+    <head>
+       
+       
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+    
+        
+        <script>
+            $(document).ready(function(){
+           
+                  $(".rd").click(function(){
+             
+                 
+                    
+                $("ul li:first-child").css("color","red");
+            
+                 }); 
+                
+                  $(".gn").click(function(){
+             
+                 
+                    
+                $("ul li:first-child").css("color","green");
+            
+                 }); 
+                 
+                 
+             });
+             
+        </script>
+        </head>
+    
+    <body>
+    <ul>
+       <li>tina</li>
+         <li>rahul</li>
+         <li>priya</li>
+        
+        
+        </ul>
+        
+        <ul>
+       <li>neha</li>
+         <li>jyoti</li>
+         <li>saloni</li>
+        
+        
+        </ul>
+        <button class="rd">Red</button>
+          <button class="gn">Green</button>
+          
+    </body>
+</html>
 ================================================================================================================================================================================
 38 Display numbers from 1 and 10 sequencially. All Odd numbers should be printed in Red color and Even numbers should be displayed in Green Color.
 ================================================================================================================================================================================
 39 Create an image on the web page width : 150px, height : 150px. Make a button where write a JQuery code to increse the width and height of image on Clicking the button 
    and border width should be changed to 15px and color will be Red.
+    <html>
+    
+    <head>
+       
+       
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+    
+      <style>
+        img
+          
+                
+            {
+                background-color: yellow;
+                border-style: solid;
+                border-color: red;
+                margin-top: 30px;
+              
+                
+            }
+        
+         
+        
+        
+        </style>
+        
+        <script>
+            $(document).ready(function(){
+           
+
+                  
+                 $("button").click(function(){
+               
+                      $(".c1").animate({ width:"300px"}).animate({height:"350"}).animate({borderWidth:"15px"});
+                     
+              
+                  
+          
+    
+                 
+                    
+               });
+            
+                
+                 
+                 
+             });
+             
+        </script>
+        </head>
+    
+    <body>
+    <img src="image2.jpg" class="c1" height="150px" width="150px">
+      <button>Click</button>    
+    </body>
+</html>
    ================================================================================================================================================================================
 40 Make a paragraph and a button . When clicked on the button then paragraph color should be changed to red and then font size of the paragraph should be changed.
+<html>
+    
+    <head>
+       
+       
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+    
+      
+        
+        <script>
+            $(document).ready(function(){
+           
+
+                  
+                 $("button").click(function(){
+               
+                    $(".c1").css({"color":"red","font-size":"40px"});
+                  
+          
+    
+                 
+                    
+               });
+            
+                
+                 
+                 
+             });
+             
+        </script>
+        </head>
+    
+    <body>
+   <p class="c1">Hello World.Welcome To My Website</p>
+      <button>Click</button>    
+    </body>
+</html>
 ================================================================================================================================================================================
 41 Create a Login Form where Username and Password is to be taken in the textbox. The Login form should be hidden When click on the button and also should be displayed 
    when clicked again.
