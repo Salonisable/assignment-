@@ -800,6 +800,16 @@ document.write(Name.reverse());
  
 ================================================================================================================================================================================
 29 Take two numbers as input in the dialogbox and calculate sum and print it.
+<html>
+<body>
+<script>
+var num1=Number(prompt("Enter num1"));
+var num2=Number(prompt("Enter num2"));
+var sum=num1+num2;
+document.write("Sum of "+num1+" and "+num2+" is "+sum);
+</script>
+</body>
+</html>
 
 ================================================================================================================================================================================
 30 Create a confirm box on giving some message.If User clicks Ok button , then background color of the body should be green, If user clicks on cancel button then 
@@ -834,17 +844,210 @@ document.write(Name.reverse());
 
   ================================================================================================================================================================================
 31 Make a form in Javascript where 2 text boxes accept numbers. Create 4 buttons ADD,SUB,MUL,DIV. When clicked on a button display the Answer in Heading tag.
+<html>
+    <head>
+    </head>
+  
+    <body>
+    <h1 id="i1"></h1>
+      
+        <form name="myform">
+      
+        ENTER FIRST NUMBER : <input type="number" name="num1"><br>
+        <br>    
+        ENTER SECOND NUMBER : <input type="number" name="num2"><br>  
+        <br>
+        <input type="button" value="ADD" onclick="add()"><br>
+         <br>   
+        <input type="button" value="SUB" onclick="sub()"><br>
+          <br>  
+        <input type="button" value="MUL" onclick="mul()"><br>
+          <br>
+        <input type="button" value="DIV" onclick="div()"><br>
+         <div id="res"></div> 
+    </form>
+      <script>
+          
+        function add()
+          {
+                 var a=parseInt(document.myform.num1.value);
+                 var b=parseInt(document.myform.num2.value);
+                 var res=a+b;
+                  document.getElementById("i1").innerHTML=res;
+              
+             
+         }
+          
+    function sub()
+           {
+              var a=parseInt(document.myform.num1.value);
+              var b=parseInt(document.myform.num2.value);
+              var res=a-b;
+               document.getElementById("i1").innerHTML=res;
+            }
+          function mul()
+          {
+                 var a=parseInt(document.myform.num1.value);
+                 var b=parseInt(document.myform.num2.value);
+                 var res=a*b;
+                  document.getElementById("i1").innerHTML=res;
+         }
+          
+          
+           function div()
+          {
+                 var a=parseInt(document.myform.num1.value);
+                 var b=parseInt(document.myform.num2.value);
+                 var res=a/b;
+                  document.getElementById("i1").innerHTML=res;
+         }
+          
+        
+        </script>  
+    </body>
+</html>
+
  ================================================================================================================================================================================
 32 Create a Registration form where name,age,city(select box),email and a submit button. Form should not be submitted if age is less than 18.
+<html>
+<head>
+
+  
+</head>
+<body>
+    <h2 id="i1"> </h2>
+    <h2 id="i2"> </h2>
+    <h2 id="i3"> </h2>
+    <h2 id="i4"> </h2>
+
+ 
+
+    
+    <form name="myform">
+    <center>
+    <table border="3">
+    <tr><td>NAME</td><td><input type="text" name="nm" required></td></tr>  
+    <tr><td>AGE</td><td><input type="number" name="ag" required></td></tr> 
+    <tr><td>CITY</td><td>
+    <select name="cy" multiple required>
+    <option selected>Select a city....</option>
+    <optgroup label="MAHARASHTRA">
+    <option value="PUNE">PUNE</option> 
+    <option value="MUMBAI">MUMBAI</option>
+    <option value="NAGPUR">NAGPUR</option>     
+    </optgroup>
+    </select></td></tr>
+    <tr><td>EMAIL</td><td><input type="email" name="em" required></td></tr> 
+    <tr><td><input type="button" onclick="fun()" value="GO"></td></tr>
+    </table>    
+    </center>
+    </form>
+    
+    <script>
+    function fun()
+        {
+            var nam = document.myform.nm.value;
+            var ag = document.myform.ag.value;
+            var city = document.myform.cy.value;
+            var ema = document.myform.em.value;
+            
+            if(ag >= 18)
+                {  
+                document.getElementById("i1").innerHTML=nam;         
+                document.getElementById("i2").innerHTML=ag;
+                document.getElementById("i3").innerHTML=city;
+                document.getElementById("i4").innerHTML=ema;
+                }
+            else
+            {
+               alert("FORM CANNOT BE SUBMITTED IF AGE IS LESS THAN 18");
+            }
+        }
+    
+    </script>
+</body>
+</html>
  ================================================================================================================================================================================
 33 Create a form to accept password and username .3 text boxes for Username, Password and Retype Password. If Both passwords are matched then only form should be 
    submitted and display the username in the servlet.
  ================================================================================================================================================================================
 34 Create a JSON data which contains book information for three books. Access all the details of every book like bookid,booktitle,bookprice.
- ================================================================================================================================================================================
+
+================================================================================================================================================================================
 35 Create a Javascript object which has a property as StudentName,StudentSkills (Array) . Convert this object to JSON.
-   ================================================================================================================================================================================
+  ================================================================================================================================================================================
+  36 Create 3 buttons named as Red, Green, Blue. When clicked on any button the page background should be changed according to the button.
+
+    <html>
    
+    <head>
+      
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   
+       
+        <script>
+             $(document).ready(function(){
+          
+         
+                
+                
+                              
+                $("button.c1").click(function(){
+               $("body").css("backgroundColor","red");
+             
+                });
+                
+                                 
+                $("button.c2").click(function(){
+               $("body").css("backgroundColor","blue");
+             
+                });
+                
+            
+                
+                
+                   $("button.c3").click(function(){
+               $("body").css("backgroundColor","green");
+             
+                });
+                
+                
+                
+             });
+            
+        </script>
+        </head>
+   
+    <body>
+   
+        <p></p>
+        <button class="c1">Red</button>
+          <button class="c2">Blue</button>
+          <button class="c3">Green</button>
+    </body>
+</html>
+
+  
+37 Create two buttons red and green .Change the font color of the first element of 2 unordered list according to button.
+================================================================================================================================================================================
+38 Display numbers from 1 and 10 sequencially. All Odd numbers should be printed in Red color and Even numbers should be displayed in Green Color.
+================================================================================================================================================================================
+39 Create an image on the web page width : 150px, height : 150px. Make a button where write a JQuery code to increse the width and height of image on Clicking the button 
+   and border width should be changed to 15px and color will be Red.
+   ================================================================================================================================================================================
+40 Make a paragraph and a button . When clicked on the button then paragraph color should be changed to red and then font size of the paragraph should be changed.
+================================================================================================================================================================================
+41 Create a Login Form where Username and Password is to be taken in the textbox. The Login form should be hidden When click on the button and also should be displayed 
+   when clicked again.
+   ================================================================================================================================================================================
+42 create div tag with predefined parameters : width :300px, height:300px. When move the mouse over the division then height and width should be increased.
+================================================================================================================================================================================
+43 Create two paragraphs p1 and p2. When clicked on the first paragraph the second paragraph should be given the effect of slidingup and sliding down.
+================================================================================================================================================================================
+   
+
+ 
+© 2021 GitHub, Inc.
 
  
 
