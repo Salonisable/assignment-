@@ -848,7 +848,33 @@ float: right;
    ================================================================================================================================================================================
 
 22 Create a Javascript file which is included in HTML Page.In this file Assign Name , age and City of a person and display these values as a heading in Red color.
+HTML PAGE
 
+     <html>
+    <head>
+        <style>
+            h2
+            {
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <h2 id="id1"></h2>
+        <script src="ASSI-22.js">
+        </script>
+    </body>
+</html>
+
+    JAVA PAGE
+    
+    var name="VISHAL";
+var age=5.5;
+var city="pune";
+ var info="Name : "+name+" Age : "+age+" City : "+city; 
+
+
+document.getElementById('id1').innerHTML=info;
 ================================================================================================================================================================================
 
 23 Create a Javascript function which accepts a number and returns the cube of the number and print the cube.
@@ -1177,7 +1203,51 @@ document.write("Sum of "+num1+" and "+num2+" is "+sum);
    submitted and display the username in the servlet.
  ================================================================================================================================================================================
 34 Create a JSON data which contains book information for three books. Access all the details of every book like bookid,booktitle,bookprice.
+<html>
 
+    <head>
+    
+    
+    </head>
+
+    <body>
+    
+    <script>
+        
+           var p={
+               
+               "BOOKS":[
+                   
+                {"name":"java","info":["101","coading","500"]},
+                
+                    
+                {"name":"c++","info":["102","language","600"]},
+           
+                    
+                {"name":"html","info":["103","web disigning","600"]}
+               
+                   
+               ]
+               
+           }   
+           
+           document.write("<table border=1>");
+           document.write("<tr><th>NAME</th><th>DETAILS</th></tr>");
+        
+            for(var i=0;i<p.BOOKS.length;i++)
+                {
+                    document.write("<tr><td>"+p.BOOKS[i].name+"</td><td>"+p.BOOKS[i].info+"</td></tr>");
+                }
+        
+          document.write("</table>");
+        
+        
+    </script>
+        
+    </body>
+
+
+</html>
 ================================================================================================================================================================================
 35 Create a Javascript object which has a property as StudentName,StudentSkills (Array) . Convert this object to JSON.
 <html>
@@ -1332,6 +1402,41 @@ document.write("Sum of "+num1+" and "+num2+" is "+sum);
 </html>
 ================================================================================================================================================================================
 38 Display numbers from 1 and 10 sequencially. All Odd numbers should be printed in Red color and Even numbers should be displayed in Green Color.
+ <html>
+<head>
+<style>
+    #s1
+    {
+    color: green;
+    }
+    
+    #s2
+    {
+    color: red;
+    }
+</style>   
+</head>
+<body>
+   <script>
+   for(var i=1;i<=10;i++)
+       {
+         document.write("<table border='2'");
+         
+         if(i%2==0)
+             {
+         document.write("<tr id='s1'><td>"+i+"</td></tr>");  
+             }
+         else
+               {
+         document.write("<tr id='s2'><td>"+i+"</td></tr>");  
+               } 
+         document.write("</table>");
+       }
+    
+   </script> 
+    <table style="border-style: solid"></table>
+</body>
+</html>
 ================================================================================================================================================================================
 39 Create an image on the web page width : 150px, height : 150px. Make a button where write a JQuery code to increse the width and height of image on Clicking the button 
    and border width should be changed to 15px and color will be Red.
@@ -1432,9 +1537,99 @@ document.write("Sum of "+num1+" and "+num2+" is "+sum);
 ================================================================================================================================================================================
 41 Create a Login Form where Username and Password is to be taken in the textbox. The Login form should be hidden When click on the button and also should be displayed 
    when clicked again.
+   <html>
+   
+    <head>
+        <style>
+           
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   
+       
+        <script>
+             $(document).ready(function(){
+                
+            $(".togglebtn").click(function(){
+             $("form").toggle();
+              
+              
+           });
+                
+                     
+             });
+                   
+        </script>
+        </head>
+   
+    <body>
+        
+        <form>
+            
+             <b>ENTER NAME<input type="text"></b>   
+             <br>
+             <br>   
+             <b>ENTER PASSWORD<input type="text"></b>          
+             <br>
+             <br>  
+            </form>
+            
+       
+           <button class="togglebtn">SUBMIT</button>
+    
+       
+        <div></div>
+       
+    </body>
+</html>
    ================================================================================================================================================================================
 42 create div tag with predefined parameters : width :300px, height:300px ,backgroundcolor = red. When move the mouse over the division then height and width should be 
    increased and color should be changed and when you leave the division area the original width , height and color should be displayed.
+   <html>
+    <head>
+        <style>
+             div
+            {
+                background-color: red;
+                width: 300px;
+                height: 300px;    
+            }
+            
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+        <script>
+             $(document).ready(function(){
+               
+                 $("div").mouseenter(function(){
+                    $(".c1").animate(
+                        { 
+                            
+                            width:"+=40px",
+                            height:"+=140px",
+                
+           });
+                            
+                     $("div").mouseleave(function(){
+                    $(".c1").animate(
+                        { 
+                            
+                            width:"-=20px",
+                            height:"-=100px",
+                 
+           });
+                         
+                     $("div").hover(function(){
+                    $(this).css("backgroundColor","yellow")                       
+           });                    
+              });
+                 });
+                    });  
+        </script>
+        </head>
+    <body>
+        <hr>
+           <div class="c1"></div><br>      
+    </body>
+</html>
 ================================================================================================================================================================================
 43 Create two paragraphs p1 and p2. When clicked on the first paragraph the second paragraph should be given the effect of slidingup and sliding down.
  <html>
@@ -1467,12 +1662,91 @@ document.write("Sum of "+num1+" and "+num2+" is "+sum);
         </body>
 </html>
 ================================================================================================================================================================================
-   
+44 Create an Anonymous function in Typescript where function take firstname & lastname as parameters and returns the full name. Display fullname.
+      
+ANS. let f1=function(fn:string, ln:string):String
+{
+    return fn+ln;
+}
 
+console.log("NAME :"+("VISHAL"+"MUNDE"));
+====================================================================================================================================================================       
+
+45 Create an arrow function in typescript which accepts a number as a parameter and returns the square of a number.
+
+ANS. var fn1= (v1)=>console.log("SQUARE IS : "+(v1*v1));
+
+fn1(5);
+===================================================================================================================================================================
+
+46 Make an anonymous function which accepts a number and calculates the factorial of the number and print it.
+
+ANS. let fact=function(n1:number):number
+{
+    return n1;
+}
+
+console.log("FACTORIAL OF 5 :"+(1*2*3*4*5));
+====================================================================================================================================================================
+
+47 Make a function which accepts two arguments as first name and last name, If lastname is not passed then default lastname should be displayed with firstname.
+
+ANS. function pro1(fn:string, ln="MUNDE") 
+{
+    console.log(fn+" "+ln);
+}
+
+pro1("VISHAL","SINGH"); 
+======================================================================================================================================================================
+
+48 Make a function with optional parameter. This function accepts only one parameter.
+
+ANS. function pro(v1) 
+{
+    console.log("ONE PARAMETER IS : "+v1);
+}
+
+pro("VISHAL");
+=====================================================================================================================================================================
+
+52 Create two textboxes as name and age of a person in a component as a child of Root component.Create a button as submit. Once clicked on this button , some handler
+    should be called which will display the name and age in the alert box.
+    
+ANS. assi52.component.html
+
+     <h1>ASSIGNMENT : 52</h1>
+<br>
+<hr>
+
+NAME : <input [(ngModel)]="name"><br>
+
+AGE :  <input [(ngModel)]="age"><br>
+
+<button (click)="getdetails()">SUBMIT</button>
  
+    assi52.component.ts
+    
+    import { Component, OnInit } from '@angular/core';
 
+@Component({
+  selector: 'app-assi52',
+  templateUrl: './assi52.component.html',
+  styleUrls: ['./assi52.component.css']
+})
+export class ASSI52Component implements OnInit {
 
- 
+  constructor() { }
 
+  ngOnInit(): void {
+  }
 
- 
+  name:string;
+  age:number;
+
+  getdetails()
+  {
+    alert("NAME : "+this.name+" "+"AGE : "+this.age);
+  }
+}
+=============================================================================================================================================================================
+    
