@@ -16,7 +16,15 @@ Q.2 Add a column in the Result table named as Grade
 alter table Result2 add grade varchar2(20); 
 ===============================================================================================================================================================================
 Q.3 Create a table marks which stores the marks of 5 subjects(physics,chemistry,maths,computer,english) and display the percentage. Store record of 5 students.
+ create table percentages(NAME varchar2(10), physics number(3), chemistry number(3), maths number(3), computer number(3), english number(3), percentages  as (((physics + chemistry + maths + computer + english)/500)*100));
 
+     insert into percentages (NAME, physics, chemistry, maths, computer, english) values('saloni', '90', '80', '70', '98', '99');
+     insert into percentages (NAME, physics, chemistry, maths, computer, english) values('simi',  '80', '90', '70', '78', '79');
+     insert into percentages (NAME, physics, chemistry, maths, computer, english) values('simon',    '70', '60', '80', '98', '89');
+     insert into percentages (NAME, physics, chemistry, maths, computer, english) values('jaya', '60', '50', '30', '68', '49');
+     insert into percentages (NAME, physics, chemistry, maths, computer, english) values('mohini',  '50', '80', '70', '68', '59');
+
+     select * from percentages;  
 ===============================================================================================================================================================================
 Q.4 Rename the table Result with StudentScore.
 
@@ -194,6 +202,23 @@ Q.16 Create a table where records of an employee is maintained .
      Create PersonnelDetails : ID( Foreign Key ) , Addres (NOT NULL), contactno(NOT NULL , UNIQUE) 
      Join Both tables and Display output
      
+     create table emprecord1(ENAME varchar2(10) not null, EID number(10) primary key, OFFICENO number(10) unique, 
+                    DATEOFJOINING varchar2(10) not null, COMPANYNAME varchar2(20) default 'GO-DIGIT',
+                    SALARY number(10) check (SALARY >=0));
+                     
+insert into emprecord1 values('saloni', '101', '1111', '01-01-2021', 'MD India', '50000');
+insert into emprecord1 values('mohini', '102', '1122', '02-02-2022', 'MD India', '40000');                     
+insert into emprecord1 values('piyuu', '103', '1133', '03-03-2023', 'MD India', '30000'); 
+
+select * from emprecord1;
+
+create table person1(ID number(10) constraint fk_ID references emprecord1 (EID), ADDRESS varchar2(20) not null, 
+                     CONTACTNO number not null unique); 
+select * from person1;
+
+insert into person1 values(101,'Pune','77237');
+
+select emprecord1.EID, person1.ADDRESS from emprecord1 inner join person1 on emprecord1.EID=person1.ID;
          
 ===============================================================================================================================================================================
 Q.17  Create a table Students ---- Rollno( Primary Key ), 
@@ -213,6 +238,27 @@ Q.17  Create a table Students ---- Rollno( Primary Key ),
 ===============================================================================================================================================================================
 Q.18 Create a table which stores PersonName(Not Null),Mobile(Unique),Address.  Create two views v1 and v2 on the table. v1 is read only but v2 is updatable.
       v1 shows personName and Mobile while v2 shows PersonName and Address.
+      
+      create table MYDATA(PERSONNAME varchar2(10) not null, MOBILENO number(10) unique, ADDRESS varchar2(30));
+
+insert all
+           into MYDATA(PERSONNAME,MOBILENO,ADDRESS) values('saloni', '123456789', 'PUNE MAHARASHTRA')
+           
+           into MYDATA(PERSONNAME,MOBILENO,ADDRESS) values('jojo',  '0987654321', 'MUMBAI MAHARASHTRA')
+               
+           into MYDATA(PERSONNAME,MOBILENO,ADDRESS) values('nimesh',  '0987575466',  'BEED MAHARASHTRA')
+           
+           select * from dual;
+           
+           select * from MYDATA; 
+           
+           create view v1_per as select * from MYDATA with read only;
+           
+           create view v2_per as select * from MYDATA;
+           
+           select PERSONNAME, MOBILENO from v1_per;
+           
+           select PERSONNAME, ADDRESS from v2_per;    
 ===============================================================================================================================================================================
 Q.19 Create a PL/SQL Block which declares the radius of a circle and make a constant pi and assign values as 3.14 to it. Find the area of circle and Print area.
 declare
@@ -263,12 +309,67 @@ i := ASCII(ch);
 END;
 ===============================================================================================================================================================================
 Q.22 PRINT ALL EVEN NUMBERS BETWEEN 10 AND 30 USING WHILE LOOP.USE IF CONDITION TO CHECK.
+ set serveroutput on
+
+DECLARE 
+
+        A NUMBER :=10;
+BEGIN
+
+    WHILE A<=30 LOOP  
+    
+    IF mod(A,2)=0 THEN
+    
+    dbms_output.put_line('EVEN NUMBER : '||A);
+    
+    END IF;
+    
+    A := A+1; 
+    
+    END LOOP;
+    
+END;
 ===============================================================================================================================================================================
 Q.23 PRINT ALPHABETS IN REVERSE ORDER USING FOR LOOP.
+set serveroutput on
+
+DECLARE
+
+       V char;
+BEGIN
+
+       FOR M IN REVERSE 65..90 
+
+LOOP
+
+       V := CHR(M);
+
+      dbms_output.put_line(V);
+
+END LOOP;
+
+END;
 ===============================================================================================================================================================================
 Q.24 PRINT THE FACTORIAL OF A NUMBER USING FOR LOOP.
 ===============================================================================================================================================================================
 Q.25 Create an array of 5 names and print all names in Capital case.
+ set serveroutput on
+
+declare
+        s1 varchar2(10) := 'abhijeet';
+        s2 varchar2(10) := 'rupali';
+        s3 varchar2(10) := 'rajashree';
+        s4 varchar2(10) := 'deepraj';
+        s5 varchar2(10) := 'sanju';
+        
+begin
+      dbms_output.put_line(upper(s1));
+      dbms_output.put_line(upper(s2));
+      dbms_output.put_line(upper(s3));
+      dbms_output.put_line(upper(s4));
+      dbms_output.put_line(upper(s5));
+      
+      end;
 ===============================================================================================================================================================================
 Q.26 Create an array of 5 names and print all names with length in Capital case.
       "abc" ===>  ABC : 3 
@@ -346,9 +447,74 @@ Q.30 Create following procedures :
 Q.31 Create a function which accepts your name as a parameter and age and returns the following string as an output :
      Ex:  Input Name :  abcd 
           Output     :  ABCD 24
-          ===============================================================================================================================================================================
+           SET SERVEROUTPUT ON
+
+CREATE OR REPLACE FUNCTION F1(NAME in varchar2, AGE in number) RETURN VARCHAR2
+IS
+
+BEGIN
+
+      return NAME;
+      
+END;
+
+CREATE OR REPLACE FUNCTION F2(name in varchar2,age in number) RETURN number
+IS
+
+BEGIN
+
+      return AGE;
+      
+END;
+
+DECLARE
+
+        VV varchar2(10);
+        MM varchar2(20);
+                
+BEGIN
+
+        VV := F1('saloni',19);
+        MM := F2('ssimi',20);
+
+        dbms_output.put_line(UPPER(VV) || ' ' || MM);
+
+END;
+ ===============================================================================================================================================================================
 Q.32 Create a function which is applied on the following table : EMPLOYEE (ename , salary)
      Function will return the avg salary of employees.
+     set serveroutput on
+
+create table employees(ENAME varchar2(20), SALARY number(10));
+
+create or replace procedure vm(ENAME in varchar2, SALARY in number)
+is
+begin
+insert into employees values(ENAME, SALARY);
+end;
+
+begin
+vm('abhijeet', 90000);
+vm('rupaki',  80000);
+vm('dhiraj', 70000);
+vm('tejaswani',  60000);
+vm('palavi',  50000);
+end;
+
+create or replace function avge return number
+as
+v number;
+begin
+select avge(salary) into v from employee;
+return v;
+end;
+
+declare
+m number;
+begin
+a := avge;
+dbms_output.put_line('AVERAGE SALARY IS :' || m);
+end;_
      ===============================================================================================================================================================================
 Q.33 Create a procedure to see a record of an employee in Q.30 . Make a record variable in the same procedure . Using the record variable show the name and age.
 ===============================================================================================================================================================================
