@@ -111,10 +111,41 @@ ANS: #include<stdio.h>
 
 8) Write a program to define a function Calculator() which accepts two integer values and print sum,subtraction,division and multiplication.
 ANS:
+#include<stdio.h>
+#include<conio.h>
+
+void calculator(int a,int b);
+
+int main()
+{
+	calculator(20,30);
+	return 0;
+	
+}
+
+void calculator(int a,int b)
+{
+	printf("\ndivision :%d",(a/b));
+	printf("\nmultiplication :%d",(a*b));
+	printf("\nsubtraction :%d",(a-b));
+	
+	
+}
 ====================================================================================================================================================
 
 9) Write a program to define a function which takes a number from user and print the number.
 ANS: 
+#include<stdio.h>
+void fun()
+{ int num;
+  printf("Enter you number: ");
+  scanf("%d",&num);
+ printf("Your number %d is luckly number for you ",num);
+}
+int main()
+{
+    fun();
+    return 0;
 }
 ====================================================================================================================================================
 
@@ -137,7 +168,25 @@ int main()
 ====================================================================================================================================================
 
 11) Write a function which takes a character in small case and returns the same character in capital case.
-ANS:
+ANS:#include<stdio.h>
+
+
+int main()
+{
+    char character , capitalcase;
+    printf("\nenter a small character: \n");
+    scanf("%c" ,&character);
+   
+	 if(character>=97&&character<=122)
+     {
+	     capitalcase = character - 32;
+         printf("\nthe given character in capitalcase = %c\n",capitalcase);
+     }
+ else {
+ 	    printf("enter a smallcase character");
+ }
+ return 0;    
+}
 ====================================================================================================================================================
 
 12) Write a program to display the result acoording to following using only if:
@@ -327,168 +376,399 @@ void main()
       Skip valus as 1 5 9 10 15
       
       Output : 23467811
-      ANS:
+      ANS:#include<stdio.h>
+
+main()
+{    
+    int i;
+	for(i=0;i<=30;i++)
+	{
+		if(i==1 || i==5 || i==9 || i==10 || i==15)
+		continue;
+		printf("%d\n",i);
+		
+	}
+}
      ====================================================================================================================================================
   20) Write a program to define marks of 5 subjects and print the average of marks.
-  ANS:
+  ANS:#include<stdio.h>
+#include<conio.h>
+
+void main()
+{
+        float sub,average,s1,s2,s3,s4,s5;
+	printf("enter 5 subjects marks :");
+	scanf("%f %f %f %f %f", &s1,&s2,&s3,&s4,&s5);
+	sub=s1+s2+s3+s4+s5;
+	
+	average=(sub/500)*100;
+	printf("average is %f", average);
+	getch();
+}
   ====================================================================================================================================================
   21) Print the sum of numbers between 10 and 20.
-  ANS:
+  ANS:#include<stdio.h>
+#include<conio.h>
+	
+
+ main()
+
+
+{ 
+    int i;
+    for(i=10;i<=20;i++)
+    {
+    	printf("%d \n",i);
+    	
+	}
+}
   ====================================================================================================================================================
   22) Print the sum of only odd numbers between 1 and 10.
-  ANS:
+  ANS:#include<stdio.h>
+  #include<conio.h>
+  main()
+   {
+	printf("\n");
+	int i;
+	for(i=0;i<10;i++)
+	{
+		if(i%2!=0)
+		printf("%d\n",i);
+	}
+
+
+}
   ====================================================================================================================================================
   23) Program to check a number is prime or not
-  ANS:
+  ANS:#include<stdio.h>
+#include<conio.h>
+
+int main()
+{
+	int i,n,r=0;
+	printf("enter any nmuber:");
+	scanf("%d" ,&n);
+	
+	for(i=2;i<=n-1;i++)
+	{
+		if(n%i==0)
+		r=1;
+		break;
+	}
+	if(r==0)
+	printf("prime number");
+	else
+	printf("not prime number");
+	getch();
+}
   ====================================================================================================================================================
   24) Program to find Sum of digits
-  ANS:
+  ANS:#include<stdio.h>
+#include<conio.h>
+
+void main()
+{
+	int num, rem, sum =0;
+	
+	printf("enter a int number\n");
+	scanf("%d",&num);
+	
+	while(num)
+	{
+		rem = num % 10;
+		sum = sum + rem;
+		num = num / 10;
+	}
+	printf("the sum of digits is %d",sum);
+	getch();
+}
   ====================================================================================================================================================
   25) Program to find Largest of n numbers
-  ANS:
+  ANS:#include<stdio.h>
+void main()
+{
+  int n1,n2;
+     printf("Enter number 1\n");
+     scanf("%u", &n1);
+     printf("Enter number 2\n");
+     scanf("%u", &n2);
+    
+     if(n1<n2)
+     {
+     printf(" You 2th number %d is Largest",n2);
+     }
+     else 
+     {
+     	printf(" You 1th number %d is Largest",n1);
+	 }
+	 
+	 
+ }
   ====================================================================================================================================================
   26) Program to find Factorial of a number
-  ANS:
+  ANS:#include <stdio.h>
+int main()
+{
+    int n,i,f;
+    f=i=1;
+    printf("Enter a Number to Find Factorial: ");
+    scanf("%d",&n);
+    while(i<=n)
+    {
+        f*=i;
+        printf("The %d Factorial 0f %d : %d\n",i,n,f);
+        i++;
+    }
+    printf("\n This is end of the code ");
+    return 0;
+}
   ====================================================================================================================================================
   27) Program to find Average of n numbers entered by user
-  ANS:
+  ANS:#include<stdio.h>
+void main()
+{
+  int n1,n2,n3,n4,tot,avg;
+     printf("Enter number 1\n");
+     scanf("%u", &n1);
+     printf("Enter number 2\n");
+     scanf("%u", &n2);
+     printf("Enter number 3\n");
+     scanf("%u", &n3);
+     printf("Enter number 4\n");
+     scanf("%u", &n4);
+     tot=n1+n2+n3+n4;
+     avg=tot/4;
+     printf("your Number total will be %u than Average will be %u",tot,avg);     	 
+ }
   ====================================================================================================================================================
   28) Program to display fibonnacci series 0 1 1 2 3 5 8....
-  ANS:
+  ANS: #include<stdio.h>
+int main()
+{
+	 int i, n, t1 = 0, t2 = 1, next_Term;
+    
+    printf("Enter the number: ");
+    scanf("%d", &n);
+    
+    printf("Fibonacci Series: ");
+
+    for (i = 1; i <= n; ++i) 
+	{
+        printf("%d, ", t1);
+        next_Term = t1 + t2;
+        t1 = t2;
+        t2 = next_Term;
+    }
+
+}
   ====================================================================================================================================================
   29) Program to swap 2 numbers
-  ANS:
+  ANS:#include<stdio.h>
+int main() {
+      int first, second, temp;
+      printf("Enter first number: ");
+      scanf("%d", &first);
+      
+      printf("Enter second number: ");
+      scanf("%d", &second);
+      
+      temp = first;
+
+      first = second;
+
+      second = temp;
+
+      printf("\nAfter swapping, firstNumber = %d\n", first);
+      printf("After swapping, secondNumber = %d", second);
+      return 0;
+}
   ====================================================================================================================================================
   30) Write a program to define a float array of marks of 5 subjects of a studdent and calculate the average of marks and display.
       Enter marks : 55 66 44 77 88
       Average :  ?31) Create an array of 5 integer values and print the double of every value of an array using pointer concept:
       Input : num[]={1,2,3,4,5}
       Output: num[]={2,4,6,8,10}
-      ANS:
-      ====================================================================================================================================================
-  32) Accept first name and lastname from user and print fullname.
-  ANS:
-  ====================================================================================================================================================
-  33) Write a program to take a city name from user and print the city name in reverse order using character pointer.
-  ANS:
-  ====================================================================================================================================================
-  34) Input a string from user and print only vowels of the string.
-      Input : Pune
-      Output : ue
-      ANS:
+      ANS:#include<stdio.h>
+#define SIZE 5 
+
+int main()
+{
+	float marks[SIZE];
+	
+	int i;
+	
+	for(i-0;i<SIZE;i++)
+	{
+		printf("enter marks %d : ",(i+1));
+		scanf("%f" ,&marks[i]);
+	}
+	
+	float sum=0.0;
+	for(i=0;i<SIZE;i++)
+	{
+		sum=sum+marks[i];
+	}
+	float avg;
+	
+	avg=sum/SIZE;
+	
+	printf("average : %f" ,avg);
+	
+}
    ====================================================================================================================================================
-  35) Make two pointer variables p1 and p2 which are pointing to x and y variables, x=10, y=20. Create a function which accepts two pointers as a parameter and 
-      perform addition operation on x and y. 
-      ANS:
-      ====================================================================================================================================================
-  36) Create a function addition() which accepts addresses of two variables. This function does the addition of two numbers.
-  ANS:
-  ====================================================================================================================================================
-  37) Create a program to find average of array elements where array is passed to the function.
-  ANS:
-  ====================================================================================================================================================
-  38) Create an array of characters dynamically using malloc function.
-  ANS:
-  ====================================================================================================================================================
-      
-      31) Create an array of 5 integer values and print the double of every value of an array using pointer concept:
-      Input : num[]={1,2,3,4,5}
-      Output: num[]={2,4,6,8,10}
-      ANS:
-      ====================================================================================================================================================
+   31) Create an array of 5 integer values and print the double of every value of an array using pointer concept:
+
+#include<stdio.h>
+#include<conio.h>
+ int main()
+ {
+   int numbers[]={1,2,3,4,5};
+    int *p;
+    
+    p=numbers;
+    int i;
+    for(i=0;i<5;i++)
+    {
+    	printf("%d\t",(p[i]*2));
+	}
+    printf("\n");
+===============================================================================================================================
   32) Accept first name and lastname from user and print fullname.
-  ANS:
+  ANS:#include<stdio.h>
+   #include<conio.h>
+   main()
+    {
+	char name[10];
+	
+	printf("Enter your name : ");
+	
+	gets(name);
+	puts(name);
+	
+    }
   ====================================================================================================================================================
   33) Write a program to take a city name from user and print the city name in reverse order using character pointer.
-  ANS:
+  ANS:#include<stdio.h>
+
+void reverse(char*);
+
+int main()
+{
+	char str[10];
+	printf("\nenter string = ");
+	gets(str);
+	
+	reverse(str);
+	return 0;
+}
+
+void reverse(char *p)
+{
+	int i,c=0;
+	for(i=0;*(p+i)!='\0';i++)
+	{
+		c++;
+	}
+	printf("\nstring reverse = ");
+	for(i=c-1;i>=0;i--)
+	{
+		printf("%c",*(p+i));
+	}
+}
   ====================================================================================================================================================
   34) Input a string from user and print only vowels of the string.
       Input : Pune
       Output : ue
-      ANS:
+      ANS: #include<stdio.h>
+#include<conio.h>
+main()
+{
+	
+	char city[10];
+	
+	printf("Enter the city : ");
+	gets(city);
+	
+	int i=0;
+	
+	while(city[i]!='\0')
+{
+	if(city[i]=='a' || city[i]=='e' || city[i]=='i' || city[i]=='o' || city[i]=='u')
+	printf("%c\t",city[i]);
+	i++;
+}
+	
+}
    ====================================================================================================================================================
   35) Make two pointer variables p1 and p2 which are pointing to x and y variables, x=10, y=20. Create a function which accepts two pointers as a parameter and 
       perform addition operation on x and y. 
       ANS:#include<stdio.h>
+#include<conio.h>
 
-void myfucntion (int *p1, int *p2)
+void function(int *p1, int *p2)
 {
-	printf("\n value of  x : %d\n",(*p1+*p2));
+	printf("sum : %d\n",*p1+*p2);
 
-	
 	
 }
 
- int main()
+main()
+{
+	int x=10;
+	int y=20;
+	
+	int*p1;
+	int*p2;
+	
+p1=&x;
+p2=&y;
 
-	{
-	int x=10, y=20;
-	int x,*y;
-	p1=&x;
-	p2=&y;
-	 
-	 printf("values of a =  %d\nb = %d\n",x,y);
- show(p1,p2);
-	}
-	 
-	 
-	 
-	
-}
-
-	
-	
+     
+     function(p1,p2);
 }
       ====================================================================================================================================================
   36) Create a function addition() which accepts addresses of two variables. This function does the addition of two numbers.
   ANS:#include<stdio.h>
+#include<conio.h>
 
-void show(int s,int t)
+int* show()
 {
-/*	int a;
-	z=(s+t);*/
-}
-void display(int *s,int *t)
-{
-    int z;
-	z=(*s)+(*t);
-	printf("%d + %d = %d",*s,*t,z);
+	int *p;
+	int x=50;
+	p=&x;
+	return p;
+	
 }
 int main()
 {
-	int z;
-	int x=20;
-	int y=30;
+	int *s;
 	
-	show(x,y);
-	printf("%d %d\n",x,y);
-	display(&x,&y);
-
+	s=show;
+	printf("%d",*s);
 }
   ====================================================================================================================================================
   37) Create a program to find average of array elements where array is passed to the function.
   ANS:#include<stdio.h>
-
-void getaverage(int *p)
+void get_Avg(int *p)
 {
 	int i;
 	float avg,sum=0.0;
 	for(i=0;i<5;i++)
 	{
-		printf("%d",*(p+i));
+		printf("%d ",*(p+i));
 		sum=sum+p[i];
 	}
 	avg=sum/5;
-	printf("\naverage of array elements : %f",avg);
+	printf("\n Average of array elements : %f",avg);
 }
 
 int main()
 {
 	int numbers[]={10,20,30,40,50};
+	get_Avg(numbers);
 	
-	getaverage(numbers);
 }
-  ================================================================================================================================================================================
+  ====================================================================================================================================================
   38) Create an array of characters dynamically using malloc function.
   ANS:#include<stdio.h>
 #include<stdlib.h>
@@ -496,24 +776,24 @@ int main()
 int main()
 {
 	int n;
-	printf("enter no of elements in array :");
+	printf("Enter no of elements of array :");
 	scanf("%d",&n);
-	
 	char *p=(char*) malloc(n*sizeof(char ));
 	int i;
-	
 	for(i=0;i<n;i++)
 	{
+		fflush(stdin);
 		printf("Enter characters  %d :",i+1);
 		scanf("%c",&p[i]);
 	}
-	
 	for(i=0;i<n;i++)
 	{
 		printf("%c ",p[i]);
 	}
 	
 }
+  
+  
 ======================================================================================================================================================
   
       39)Create a program to enter your name and age from keyboard and print name and age.
@@ -640,3 +920,38 @@ void main()
 	printf("Therfore the Simple interest  will be %f",si);
 }
 =================================================================================================================================================================================
+44) Create a structure Student which includes two fields rollno, name . 
+      Take input from user to assign values to structure members and store details of structure data into a file student.txt
+      Maintain record for 5 students
+      
+#include<stdio.h>
+#include<string.h>
+
+typedef struct students
+{
+	char name[30];
+	int rollno;
+}students;
+
+int main()
+{
+	students s[5];
+	FILE *fp;
+	fp=fopen("C : vishal.file","a");
+	char nm[30];
+	int i;
+	
+	for(i=0;i<5;i++)
+	{
+		printf("enter student no %d name : ",i+1);
+		gets(nm);
+		strcpy(s[i].name,nm);
+		fflush(stdin);
+		printf("enter student no %d Roll no. :",i+1);
+		scanf("%d",&s[i].rollno);
+		fflush(stdin);
+		fprintf(fp,"%s\t%d\n",s[i].name,s[i].rollno);
+	}
+	
+	
+}
