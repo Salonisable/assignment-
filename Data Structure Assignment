@@ -1300,6 +1300,136 @@ int main()
 
 ======================================================================================================================================================================
 Q.18 Create a Link list of 5 nodes and print it in reverse order.
+ #include<stdio.h>
+     #include<stdlib.h>
+
+struct node
+{
+	int data;
+	struct node*nextptr;
+};
+
+struct node*startnode;
+
+
+void createnodelist(int numberofnodes);
+
+void reversenodelist();
+
+void displaynodelist();
+
+int main()
+{
+	int numberofnodes;
+	
+	printf("input the number of nodes : ");
+	scanf("%d",&numberofnodes);
+	
+	createnodelist(numberofnodes);
+	
+	printf("\ndata entered in the list are : \n");
+	displaynodelist();
+	
+	printf("\nthe list in reverse are : \n");
+	reversenodelist();
+	displaynodelist();
+	return 0;
+}
+
+void createnodelist(int numberofnodes)
+{
+	struct node*newnode;
+	struct node*tempnode;
+	int userinput;
+	int nodeid;
+	
+	startnode = (struct node *)malloc(sizeof(struct node));
+	
+	if(startnode == NULL)
+	{
+		printf("memory can not be allocated");
+	}
+	
+	else
+	{
+		printf("input data for user 1 : ");
+		scanf("%d", &userinput);
+		
+		startnode->data = userinput;
+		startnode->nextptr = NULL;
+		
+		tempnode = startnode;
+		
+		for(nodeid = 2; nodeid <= numberofnodes; nodeid++)
+		{
+			newnode = (struct node *)malloc(sizeof(struct node));
+			
+			if(newnode == NULL)
+			{
+				printf("memory can not be allocated. ");
+				break;
+			}
+			else
+			{
+				printf("input data for node %d : ", nodeid);
+				scanf("%d",&userinput);
+				
+				newnode->data = userinput;
+				newnode->nextptr = NULL;
+				
+				tempnode->nextptr = newnode;
+				tempnode = tempnode->nextptr;
+			}
+		}
+	}
+	 
+}
+void reversenodelist()
+{
+	struct node *previousnode;
+	struct node *currentnode;
+	
+	if(startnode != NULL)
+	{
+		previousnode = startnode;
+		
+		currentnode = startnode->nextptr;
+		startnode = startnode->nextptr;
+		
+		previousnode->nextptr = NULL;
+		
+		while(startnode != NULL)
+		{
+			startnode = startnode->nextptr;
+			currentnode->nextptr = previousnode;
+			
+			previousnode = currentnode;
+			currentnode = startnode;
+		}
+		
+		startnode = previousnode;
+	}
+}
+
+void displaynodelist()
+{
+	struct node *tempnode;
+	
+	if(startnode == NULL)
+	{
+		printf("no data found in the list.");
+	}
+	else
+	{
+		tempnode = startnode;
+		
+		while(tempnode != NULL)
+		{
+			printf("data = %d\n", tempnode->data);
+			tempnode = tempnode->nextptr;
+		}
+	}
+}
 ======================================================================================================================================================================
 Q.19 Create a Link list of 3 nodes and delete the head node.
 #include<stdio.h>
@@ -1629,8 +1759,78 @@ printf("\nNo not found \n");
 }
 ======================================================================================================================================================================
 Q.22 Create an array of string and search a perticular string using Linear Search.
+#include<stdio.h>
+     #include<string.h>
+
+void main()
+{
+	char name[5][10], s[10];
+	int i;
+	for(i=0; i<5; i++)
+	{
+		printf("enter name : ");
+		gets(name[i]);
+	}
+	
+	printf("enter name to search : ");
+	gets(s);
+	
+	for(i=0;i<5;i++)
+	{
+		if(strcmpi(s,name[i])==0)
+		{
+			printf("found");
+			break;
+		}
+		
+		else(i==5);
+		
+	    printf("not found");
+	    break;
+    }
+	
+}
 ======================================================================================================================================================================
 Q.23 Sort an array of 5 numbers using Insertion sort.
+ #include<stdio.h>
+     #include<conio.h>
+
+void main()
+{
+	int n, array[1000], c, d, t;
+	
+	printf("enter number of elements\n");
+	scanf("%d",&n);
+	
+	printf("enter %d integers\n", n);
+	
+	for(c=0; c < n; c++)
+	{
+		scanf("%d", &array[c]);
+	}
+	
+	for(c = 1; c <= n-1; c++)
+	{
+		d = c;
+		
+		while (d > 0 && array[d] < array[d-1])
+		{
+			t=array[d];
+			array[d]=array[d-1];
+			array[d-1]=t;
+			
+			d--;
+		}
+	}
+	
+	printf("sorted list in accending order :\n");
+	
+	for(c=0;c<=n-1;c++)
+	{
+		printf("%d\n",array[c]);
+	}
+	getch();
+}
 ======================================================================================================================================================================
 Q.24 Make a tree which contains 3 nodes. A is Root node, B is left child and C is right child.
 #include<stdio.h>
@@ -1671,6 +1871,79 @@ printf("\t%c\n",root->right->data);
 ======================================================================================================================================================================
 Q.25 Create a tree of 3 nodes where root node displays the value as "Color" , Left node of root shows value as "Red" and right node shows value as Green. 
  and print all node values in using preorder traversal.
+  #include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+
+ 
+
+typedef struct nd
+{
+    char data[3][10];
+    struct nd *left;
+    struct nd *right;
+}tree;
+
+ 
+
+tree* createnode(char* no)
+{
+    tree *np;
+    
+    np = (tree*)malloc(sizeof(tree));
+    
+    if(np == NULL)
+    {
+        printf("MEMORY UNAVAILABLE");
+        exit(0);
+    }
+    
+    strcpy(np->data,no);
+    np->left = NULL;
+    np->right = NULL;
+    
+    return np;
+}
+
+ 
+
+void preorderTraversal(tree* root)
+{
+    if(root == NULL)
+    return;
+    printf("%s->",root->data);
+    preorderTraversal(root->left);
+    preorderTraversal(root->right);
+}
+
+ 
+
+int main()
+{
+    tree *root,*n,*m;
+    
+    root = createnode("COLOUR");
+    n = createnode("RED");
+    m = createnode("GREEN");
+
+ 
+
+    root->left = n;
+    root->right = m;
+    
+    printf("ROOT NODE = %s\n",root->data);
+    printf("LEFT NODE = %s\n",root->left->data);
+    printf("RIGHT NODE = %s\n",root->right->data);
+
+ 
+
+    printf("\n");
+    
+    preorderTraversal(root);
+
+ 
+
+}
 =====================================================================================================================================================================
 Q.26 Create a link list of 3 integers and print the elements of link list in reverse order using stack.
 ======================================================================================================================================================================
