@@ -203,3 +203,31 @@ Q.14 Create a class which takes a string as a parameter in Parameterised constru
        d) Find substring "llo" from "Hello"
 ===========================================================================================================================================================================
 Q.15  Create a Class Addition where a parameterised constructor takes a double and an integer value. Create a child class of Addition which has a constructor which passes two numbers to the constructor of the Addition class . Define a method showSum() in the child class which displays the addition of two numbers.
+package Demo1;
+
+public class Addation {
+	  double a;
+      int b;
+  }
+      
+
+  class Child extends Addation{
+      
+      double a=2.6;
+      int b=6;
+
+      
+      public void showSum()
+      {
+          System.out.println(a+b);
+      }
+      
+
+      public static void main(String[] args) {
+          
+          Child ob=new Child();
+          ob.showSum();
+
+      }
+
+===========================================================================================================================================================
