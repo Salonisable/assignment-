@@ -201,6 +201,29 @@ Q.14 Create a class which takes a string as a parameter in Parameterised constru
        b) concatenate a string Hello to the string taken in the constructor
        c) Compare the taken string with any string.
        d) Find substring "llo" from "Hello"
+       
+       package Que14;
+
+public class xyzmain {
+
+	public static void main(String[] args) {
+		StringBuffer ob=new StringBuffer("welcome to my string buffer");
+		StringBuffer ob1=new StringBuffer("Hello");
+
+		System.out.println(ob);
+		
+		System.out.println(ob.reverse());
+
+		System.out.println(ob.append("Hello"));
+
+		  System.out.println(ob==ob1);
+		
+		System.out.println(ob1.substring(2));
+
+	}
+
+	}
+
 ===========================================================================================================================================================================
 Q.15  Create a Class Addition where a parameterised constructor takes a double and an integer value. Create a child class of Addition which has a constructor which passes two numbers to the constructor of the Addition class . Define a method showSum() in the child class which displays the addition of two numbers.
 package Demo1;
