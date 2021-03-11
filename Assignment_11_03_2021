@@ -190,7 +190,147 @@ Q.10 Create a TreeSet object in which add 3 color names. Display all color names
 ===========================================================================================================================================================================
 Q.11 Write a program to create an interface Sports in which methods are getGameName(), getNoOfPlayers(),showPlayerDetails() . One interface
 member variable is country1="India", country2="SA". Make classes Cricket, football which implements this interface. In showPlayerDetails() , display details of player like CountryName,GameName PlayerName,TotalPlayers.
- ===========================================================================================================================================================================
+
+
+ package demo2;
+
+public interface Sports {
+	
+
+	public String country1="INDIA";
+	public String country2="USA";
+	
+	
+	
+	public String getGameName();
+	public int getNoOfPlayers();
+	public void showPlayerDetails();
+
+}
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Cricket class
+
+package demo2;
+
+public class Cricket implements Sports {
+
+	@Override
+	public String getGameName() {
+		// TODO Auto-generated method stub
+		return "Cricket";
+	}
+
+	@Override
+	public int getNoOfPlayers() {
+		// TODO Auto-generated method stub
+		return 9;
+	}
+	
+	
+	public String getPlayerName()
+	{
+		return "MS.DHONI";
+	}
+
+	@Override
+	public void showPlayerDetails() {
+		
+		System.out.println("Country Nmae : "+country1);
+		System.out.println("Game Name : "+getGameName());
+		System.out.println("Players Name: "+getPlayerName());
+		System.out.println("No Of Players : "+getNoOfPlayers());
+	
+		
+	}
+
+}
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+class Football
+
+package demo2;
+
+public class Football implements Sports{
+
+	@Override
+	public String getGameName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int getNoOfPlayers() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
+	public String getPlayerName()
+	{
+		return "LIONE Messi";
+	}
+
+	@Override
+	public void showPlayerDetails() {
+		// TODO Auto-generated method stub
+
+		System.out.println("Country Nmae : "+country1);
+		System.out.println("Game Name : "+getGameName());
+		System.out.println("Players Name: "+getPlayerName());
+		System.out.println("No Of Players : "+getNoOfPlayers());
+	
+	}
+
+}
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+testApp
+
+package demo2;
+
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class TestApp {
+
+	public static void main(String[] args) {
+	
+		ClassPathXmlApplicationContext context=new ClassPathXmlApplicationContext("applicationContext.xml");
+		
+		Sports s=context.getBean("sport",Sports.class);
+		
+	s.showPlayerDetails();
+	
+	context.close();
+		
+	
+
+
+		
+		
+
+	}
+
+}
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+applicationContext.xml
+
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+    
+    <bean id="sport" class="demo2.Cricket">
+ 
+    
+    </bean>
+  
+    
+</beans>
+===========================================================================================================================================================================
 Q.12 Make a Class Student ,In this Class create one Inner Class as Percentage.In Percentage class a method which returns the percentage of a student.Marks of 5 subjects should be taken in the method of student.Make a method showDetails in the Student Class which shows the Percentage of the student.
 
 ===========================================================================================================================================================================
