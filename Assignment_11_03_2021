@@ -187,6 +187,48 @@ Q.8 Create a custom Exception class named as EmailException. Throw an exception 
 Q.9 Make an interface Area. Make two classes Radius and Circle.In Area , Take a method show(), In Class Radius ,define a method getRadius() which takes radius and returns the area of circle as a value. Class Circle inherits Radius and implements the Area. Display the area of circle returned by getRadius().
 ===========================================================================================================================================================================
 Q.10 Create a TreeSet object in which add 3 color names. Display all color names in Descending order and Remove any one color from the set.
+
+package Ass10;
+
+import java.util.Iterator;
+import java.util.TreeSet;
+
+public class Treeset {
+
+	public static void main(String[] args) {
+	
+	    TreeSet<String> ts=new TreeSet<String>();
+	        
+	        ts.add("Red");
+	        ts.add("Blue");
+	        ts.add("Black");
+	        
+	        System.out.println(ts);
+	        
+	        
+	        
+	        Iterator<String> it=ts.descendingIterator();
+	        
+	        while(it.hasNext())
+	        {
+	            System.out.print(it.next()+" ");
+	        }
+	        
+	        System.out.println();
+
+	 
+
+	        ts.pollFirst();  
+	        System.out.println(ts);
+
+	 
+
+	    }
+
+	 
+
+	}
+
 ===========================================================================================================================================================================
 Q.11 Write a program to create an interface Sports in which methods are getGameName(), getNoOfPlayers(),showPlayerDetails() . One interface
 member variable is country1="India", country2="SA". Make classes Cricket, football which implements this interface. In showPlayerDetails() , display details of player like CountryName,GameName PlayerName,TotalPlayers.
