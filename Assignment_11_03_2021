@@ -1,0 +1,205 @@
+Q.1 Create a Spring core Project using Maven where Calculate the Factorial of any Entered number by the user.
+       Create SpringContainer, SetterInjection, AppConfiguration and FactorialService Classes where FactorialService class 
+       is returning the factorial of the entered number. Use Setter Dependency Injection concept. Use Annotation Based 
+      configuration.   
+===========================================================================================================================================================================
+Q.2 Create a Spring core Project using Maven where create 5 classes and 1 interface. Make an interface named as operation
+       Create AppConfiguaration Class, Create Addition and StringLength classes. Addition Class returns the addition as a 
+       result and StringLength class returns the length of the defined string. Create a ConstructorInjection class which injects
+       the dependency in the constructor. Create a SpringContainer class which is executed first to get the desired result. 
+       Calculate Addition of two numbers and String length of the defined string based on the dependency.
+   ===========================================================================================================================================================================
+Q.3 Create a Spring core Project using Maven where create a Bean class named as Employee which has two member 
+        variables firstName and lastName and getter, setter methods. Create applicationContext.xml file which sets the
+        values for firstName and lastName. Create a SpringContainer class which concatenates the firstName and lastName 
+        and displays the full name. 
+        Ans:
+        Employee.java
+        package AssignmentsPackage;
+
+public class Employee {
+	public String firstname;
+    public String lastname;
+   
+   
+   
+    public Employee() {
+        super();
+    }
+    public Employee(String firstname, String lastname) {
+        super();
+        this.firstname = firstname;
+        this.lastname = lastname;
+    }
+    public String getFirstname() {
+        return firstname;
+    }
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+    public String getLastname() {
+        return lastname;
+    }
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+=====================================
+    test main
+    package AssignmentsPackage;
+
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class TestMain {
+
+	public static void main(String[] args) {
+		 ClassPathXmlApplicationContext context=new ClassPathXmlApplicationContext("ApplicationContext.xml");
+	        
+	        Employee e=context.getBean("emp",Employee.class);
+	        
+	        System.out.println(e.getFirstname()+" "+e.getLastname());
+	        
+	        context.close();
+          }
+          }
+===================================================
+          ApplicationContext
+          <?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+  <bean id="emp" class="AssignmentsPackage.Employee">
+    <property name="firstname" value="Saloni"></property>
+      <property name="lastname" value="Sable"></property>
+    
+    
+    </bean>
+  
+    
+</beans>
+==========================================================
+ pom.xml
+ <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>SpringMavenQue3</groupId>
+  <artifactId>SpringMavenQue3</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+ 
+
+  <name>SpringMavenQue3</name>
+  <url>http://maven.apache.org</url>
+
+ 
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+ <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+     <!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-context</artifactId>
+    <version>5.3.4</version>
+</dependency>
+    <!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-core</artifactId>
+    <version>5.3.4</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/org.springframework/spring-web -->
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-web</artifactId>
+    <version>5.3.4</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/org.springframework/spring-beans -->
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-beans</artifactId>
+    <version>5.3.4</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-webmvc</artifactId>
+    <version>5.3.4</version>
+</dependency>
+<dependency>
+    <groupId>org.aspectj</groupId>
+    <artifactId>aspectjweaver</artifactId>
+    <version>1.9.6</version>
+</dependency>
+    
+  </dependencies>
+ 
+</project>
+
+===========================================================================================================================================================================
+Q.4  Create a Dynamic web Project using Maven and Create the following forms:
+        a) Make a User.jsp which takes the details of students like rollno, name and city(Dropdown List).
+        b) Make a UserCtl servlet class which gets the details from User.jsp and creates a session and sets the values of 
+            rollno ,name and city in session object.
+        c) Make Details.jsp which gets the values for rollno, name and city from session object and prints All details.
+     Note : If roll number is 101, 102 or 103 then Details.jsp Prints all Details otherwise prints a message "Not a valid User"
+===========================================================================================================================================================================
+Q.5 Create a Dynamic Web Project using JSTL in which make two JSP Pages .Form1.jsp and Display.jsp
+       Form1.jsp has one text box and a submit button. When clicked on submit button, Display.jsp page is called .Display.jsp Page 
+       displays the result according to entered number. For example ,If number entered is 5 then result will be 5 6 7 8 9.....
+===========================================================================================================================================================================
+Q.6 Write a Program to create an ArrayList of 3 numbers and find the minimum of the these numbers and display it.
+
+#include <bits/stdc++.h> 
+using namespace std; 
+  
+int main() 
+{ 
+    int a = 5, b = 7, c = 10; 
+  
+    if (a <= b && a <= c) 
+        cout << a << " is the  minimum"; 
+  
+    else if (b <= a && b <= c) 
+        cout << b << " is the minimum"; 
+  
+    else
+        cout << c << " is the  minimum"; 
+  
+    return 0; 
+} 
+===========================================================================================================================================================================
+Q.7 Create a class Result which implements Runnable interface.This class has a method getMarks() which takes 5 marks as arguments and returns the percentage value.The method getMarks() should be called inside run() method.Create two Thread objects of the Result class .Set the names of these objects as "student1" and "student2". Display percentage of two students in run() method.
+===========================================================================================================================================================================
+Q.8 Create a custom Exception class named as EmailException. Throw an exception of EmailException if email length is zero.
+===========================================================================================================================================================================
+Q.9 Make an interface Area. Make two classes Radius and Circle.In Area , Take a method show(), In Class Radius ,define a method getRadius() which takes radius and returns the area of circle as a value. Class Circle inherits Radius and implements the Area. Display the area of circle returned by getRadius().
+===========================================================================================================================================================================
+Q.10 Create a TreeSet object in which add 3 color names. Display all color names in Descending order and Remove any one color from the set.
+===========================================================================================================================================================================
+Q.11 Write a program to create an interface Sports in which methods are getGameName(), getNoOfPlayers(),showPlayerDetails() . One interface
+member variable is country1="India", country2="SA". Make classes Cricket, football which implements this interface. In showPlayerDetails() , display details of player like CountryName,GameName PlayerName,TotalPlayers.
+ ===========================================================================================================================================================================
+Q.12 Make a Class Student ,In this Class create one Inner Class as Percentage.In Percentage class a method which returns the percentage of a student.Marks of 5 subjects should be taken in the method of student.Make a method showDetails in the Student Class which shows the Percentage of the student.
+
+===========================================================================================================================================================================
+Q.13 Create a class EmpDetails . Member variables of this class are EmpID, EmpName, EmpAge,EmpSalary. Create a method getDetails() which takes the details for an employee. Throw an exception if the EmpName is null ,If age is less then 18 using multi catch block.
+===========================================================================================================================================================================
+Q.14 Create a class which takes a string as a parameter in Parameterised constructor and perform the following operations using stringBuffer class: 
+       a) Print the reverse of the string
+       b) concatenate a string Hello to the string taken in the constructor
+       c) Compare the taken string with any string.
+       d) Find substring "llo" from "Hello"
+===========================================================================================================================================================================
+Q.15  Create a Class Addition where a parameterised constructor takes a double and an integer value. Create a child class of Addition which has a constructor which passes two numbers to the constructor of the Addition class . Define a method showSum() in the child class which displays the addition of two numbers.
