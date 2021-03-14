@@ -2,12 +2,300 @@ Q.1 Create a Spring core Project using Maven where Calculate the Factorial of an
        Create SpringContainer, SetterInjection, AppConfiguration and FactorialService Classes where FactorialService class 
        is returning the factorial of the entered number. Use Setter Dependency Injection concept. Use Annotation Based 
       configuration.   
+      Ans)
+
+//test_serv.java
+
+package P1;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class test_ser extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+     
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	PrintWriter out = response.getWriter();
+	int numb = Integer.parseInt(request.getParameter("num"));
+	
+	ApplicationContext ap = new ClassPathXmlApplicationContext("Appconfig.xml");
+	
+	Setter_inj si = ap.getBean("setter",Setter_inj.class);
+	
+	out.print("FACTORIAL OF THE NUMBER : "+si.getfac(numb));
+	
+	}
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}
+
+//fac_service.java
+
+package P1;
+
+import org.springframework.stereotype.Component;
+
+@Component("fac")
+public class Fac_service {
+
+	public  int fac_value(int n)
+	{
+		int res = 1;
+		int num = n;
+		
+		for(int i=1;i<=num;i++)
+		{
+			res *= i;
+		}
+		
+		return res;
+	}
+}
+
+
+//setter.injection
+
+package P1;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component("setter")
+public class Setter_inj {
+
+	Fac_service fs;
+
+	@Autowired
+	public void setFs(Fac_service fs) {
+		this.fs = fs;
+	}
+	
+	public int getfac(int num)
+	{
+		return fs.fac_value(num);
+	}
+	
+}
+
+//ass1.jsp
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="test_ser">
+ENTER NUMBER <input type="number" name="num">
+<input type="submit" value="SUBMIT">
+</form>
+</body>
+</html>
+
+
+
+
+
+
+//appconfig.xml
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+   xmlns:context="http://www.springframework.org/schema/context"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:mvc="http://www.springframework.org/schema/mvc"
+   xsi:schemaLocation="
+   http://www.springframework.org/schema/beans    
+   http://www.springframework.org/schema/beans/spring-beans.xsd
+   http://www.springframework.org/schema/context
+   http://www.springframework.org/schema/context/spring-context.xsd
+   http://www.springframework.org/schema/mvc
+   http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+   
+   <context:component-scan base-package="P1"></context:component-scan>
+   </beans>
 ===========================================================================================================================================================================
 Q.2 Create a Spring core Project using Maven where create 5 classes and 1 interface. Make an interface named as operation
        Create AppConfiguaration Class, Create Addition and StringLength classes. Addition Class returns the addition as a 
        result and StringLength class returns the length of the defined string. Create a ConstructorInjection class which injects
        the dependency in the constructor. Create a SpringContainer class which is executed first to get the desired result. 
        Calculate Addition of two numbers and String length of the defined string based on the dependency.
+        Ans)
+ //appconfiguration.java
+
+package P2;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class app_config {
+
+	@Bean
+	public addition getA()
+	{
+		return new addition();
+	}
+
+	@Bean
+	public strlength getS()
+	{
+		return new strlength();
+	}
+	
+	@Bean
+	public con_inj getcon()
+	{
+		return new con_inj(getA(),getS());
+	}
+}
+
+
+//ass2.jsp
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="test_ser2">
+NUMBER 1 <input type="number" name="n1">
+NUMBER 2 <input type="number" name="n2">
+<input type="SUBMIT" value="ENTER">
+</form>
+</body>
+</html>
+
+//test_ser2.java
+package P2;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+public class test_ser2 extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+     
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	PrintWriter out = response.getWriter();	
+		
+	int n1 = Integer.parseInt(request.getParameter("n1"));
+	
+	int n2 = Integer.parseInt(request.getParameter("n2"));
+	
+    AnnotationConfigApplicationContext af = new AnnotationConfigApplicationContext(app_config.class);
+    
+    con_inj con = af.getBean("getcon",con_inj.class);
+    out.print("ADDITION OF THE NUMBERS : "+con.getadd(n1, n2));
+    
+    out.print("&nbsp &nbsp &nbsp LENGTH OF THE STRING : "+con.getstr());
+    
+    af.close();
+	}
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}
+
+//addition.java
+
+package P2;
+
+public class addition {
+    public int num1,num2;
+    
+	public int getNum1() {
+		return num1;
+	}
+
+	public void setNum1(int num1) {
+		this.num1 = num1;
+	}
+
+	public int getNum2() {
+		return num2;
+	}
+
+	public void setNum2(int num2) {
+		this.num2 = num2;
+	}
+
+	public int sum()
+	{
+		return num1+num2;
+	}
+}
+
+
+//strlength.java
+
+package P2;
+
+import java.util.Scanner;
+
+public class strlength {
+
+	public int getstringlen()
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.println("ENTER THE STRING VALUE : ");
+		String st = sc.nextLine();
+		sc.close();
+		return st.length();
+	}
+}
+
+
+//con_inj.java
+
+package P2;
+
+public class con_inj {
+    addition add;
+    strlength str;
+	public con_inj(addition ad,strlength st)
+	{
+		this.add = ad;
+		this.str = st;
+	}
+	
+	public int getadd(int n1,int n2)
+	{
+		add.setNum1(n1);
+		add.setNum2(n2);
+		return add.sum();
+	}
+	
+	public int getstr()
+	{
+		return str.getstringlen();
+	}
+}
    ===========================================================================================================================================================================
 Q.3 Create a Spring core Project using Maven where create a Bean class named as Employee which has two member 
         variables firstName and lastName and getter, setter methods. Create applicationContext.xml file which sets the
@@ -154,10 +442,162 @@ Q.4  Create a Dynamic web Project using Maven and Create the following forms:
             rollno ,name and city in session object.
         c) Make Details.jsp which gets the values for rollno, name and city from session object and prints All details.
      Note : If roll number is 101, 102 or 103 then Details.jsp Prints all Details otherwise prints a message "Not a valid User"
+     ans)
+
+//User.jsp
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="UserCtl">
+ENTER ROLLNO <input type="number" name="rollno"><br>
+ENTER NAME <input type="text" name="nm"><br>
+ENTER CITY <select name="cy"><br>
+
+<optgroup label="MAHARASHTRA">
+<option  value="Pune">PUNE</option>
+<option  value="Mumbai">MUMBAI</option></optgroup>
+<optgroup label="KERALA">
+<option  value="Kollam">KOLLAM</option>
+<option  value="Kannur">KANNUR</option></optgroup>
+
+</select>
+
+<input type="submit" value="SUBMIT">
+</form>
+</body>
+</html>
+
+//UserCtl.java
+
+package P4;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+public class UserCtl extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+     
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    PrintWriter out = response.getWriter();
+		
+	int rollno = Integer.parseInt(request.getParameter("rollno"));
+	
+	String name = request.getParameter("nm");
+		
+	String city = request.getParameter("cy");
+	
+	HttpSession session = request.getSession();
+	
+	if(rollno !=0)
+	{
+	session.setAttribute("roll", rollno);
+	session.setAttribute("nm",name);
+	session.setAttribute("cy",city);
+	
+	response.sendRedirect("details.jsp");
+	}
+	
+	else
+	{
+		out.print("Not a valid user");
+	}
+}
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}
+
+//details.jsp
+
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<%
+
+Integer rn=(Integer) session.getAttribute("roll");
+int rollno = rn.intValue();
+
+String nm =(String) session.getAttribute("nm");
+String city= (String)session.getAttribute("cy");
+
+out.print("ROLLNO : "+rollno+"<br>");
+out.print("NAME : "+nm+"<br>");
+out.print("CITY : "+city+"<br>");
+
+%>
+</body>
+</html>
 ===========================================================================================================================================================================
 Q.5 Create a Dynamic Web Project using JSTL in which make two JSP Pages .Form1.jsp and Display.jsp
        Form1.jsp has one text box and a submit button. When clicked on submit button, Display.jsp page is called .Display.jsp Page 
        displays the result according to entered number. For example ,If number entered is 5 then result will be 5 6 7 8 9.....
+       Ans)
+
+//form.jsp
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="display.jsp">
+NUMBER <input type="number" name="nm">
+<input type="submit" value="SUBMIT">
+</form>
+</body>
+</html>
+
+//display.jsp
+
+<%@page import="java.io.PrintWriter"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<%
+int num= Integer.parseInt(request.getParameter("nm"));
+
+for(int n=num;n<=num+4;n++)
+{
+	out.print(n+" ");
+}
+out.print(". . . . .");
+
+%>
+</body>
+</html>
+
 ===========================================================================================================================================================================
 Q.6 Write a Program to create an ArrayList of 3 numbers and find the minimum of the these numbers and display it.
 
@@ -181,8 +621,132 @@ int main()
 } 
 ===========================================================================================================================================================================
 Q.7 Create a class Result which implements Runnable interface.This class has a method getMarks() which takes 5 marks as arguments and returns the percentage value.The method getMarks() should be called inside run() method.Create two Thread objects of the Result class .Set the names of these objects as "student1" and "student2". Display percentage of two students in run() method.
+Ans)
+
+package P7;
+
+import java.util.Scanner;
+
+class result implements Runnable{
+
+	public synchronized void run() {
+		
+	System.out.println("PERCENTAGE OF "+Thread.currentThread().getName()+"===>"+getmarks());
+	
+	}
+	public float getmarks()
+	{
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("ENTER MARK 1 : ");
+		float m1 = sc.nextFloat();
+		
+		sc.nextLine();
+		
+		System.out.println("ENTER MARK 2 : ");
+		float m2 = sc.nextFloat();
+
+		sc.nextLine();
+		
+		System.out.println("ENTER MARK 3 : ");
+		float m3 = sc.nextFloat();
+
+		sc.nextLine();
+		
+		System.out.println("ENTER MARK 4 : ");
+		float m4 = sc.nextFloat();
+
+		sc.nextLine();
+		
+		System.out.println("ENTER MARK 5 : ");
+		float m5 = sc.nextFloat();
+		
+		sc.close();
+		
+		float sum = m1+m2+m3+m4+m5;
+		float per = sum / 5;
+		
+		return per;
+	}
+}
+public class mythread extends result{
+
+	public static void main(String[] args) {    
+		
+    result st1 = new result();
+    Thread t1 = new Thread(st1);
+    t1.setName("student1");
+    t1.start();
+    
+    try {
+    	t1.join();
+    }
+    catch(Exception e)
+    {
+    	e.printStackTrace();
+    }
+    
+    Thread t2 = new Thread(st1);
+    t2.setName("student2");
+    t2.start();
+    
+    try {
+    	t2.join();
+    }
+    catch(Exception e)
+    {
+    	e.printStackTrace();
+    }
+  }
+}
 ===========================================================================================================================================================================
 Q.8 Create a custom Exception class named as EmailException. Throw an exception of EmailException if email length is zero.
+Ans)
+
+package P8;
+
+import java.util.Scanner;
+
+class EmailException extends Exception{
+	public EmailException()
+	{
+		System.out.println("EMAIL CANNOT BE EMPTY ");
+	}
+}
+
+public class ASS_8 {
+
+	public String ema;
+	public void method(String email){
+		this.ema = email;
+		 
+	try {
+    	  if(ema.equals("") || ema.equals(null))
+    	  {
+    		  throw new EmailException();
+    	  }
+    	  else
+    	  {
+        	  System.out.println("EMAIL ADDRESS : "+ema);
+    	  }
+      }
+	catch(EmailException em)
+	{
+		em.printStackTrace();
+	}
+  }
+	public static void main(String[] args) {
+    ASS_8 as = new ASS_8();
+    Scanner sc = new Scanner(System.in);
+    
+    System.out.println("ENTER EMAIL ADDRESS : ");
+    String em = sc.nextLine();
+    
+    as.method(em);
+	sc.close();
+	}
+
+}
 ===========================================================================================================================================================================
 Q.9 Make an interface Area. Make two classes Radius and Circle.In Area , Take a method show(), In Class Radius ,define a method getRadius() which takes radius and returns the area of circle as a value. Class Circle inherits Radius and implements the Area. Display the area of circle returned by getRadius().
 Area:
@@ -473,6 +1037,79 @@ public class Student {
 	}
 ===========================================================================================================================================================================
 Q.13 Create a class EmpDetails . Member variables of this class are EmpID, EmpName, EmpAge,EmpSalary. Create a method getDetails() which takes the details for an employee. Throw an exception if the EmpName is null ,If age is less then 18 using multi catch block.
+Ans)
+
+package P13;
+
+class Invalidage extends Exception{
+	public Invalidage()
+	{
+		System.err.println("INVALID AGE");
+	}
+}
+public class Empdetails {
+
+	public int EmpID;
+	
+	public String EmpName;
+	
+	public int EmpAge;
+	
+	public int EmpSalary;
+	
+	public void getdetails(int id,String nm,int age,int sal)
+	{
+		this.EmpID = id;
+		
+		try {
+			if(nm.equals(""))
+				throw new NullPointerException();
+			else
+			this.EmpName = nm;
+		}
+		catch(NullPointerException ne)
+		{
+			ne.printStackTrace();
+		}
+		
+		try {
+		if(age <= 18) {
+			throw new Invalidage();
+		}
+			else {
+			this.EmpAge = age;
+		}
+}
+		catch(Invalidage in)
+		{
+			in.getMessage();
+		}
+		catch(ArithmeticException ar)
+		{
+			ar.printStackTrace();
+		}
+	    catch(Exception e)
+		{
+	    	e.printStackTrace();
+		}
+		
+		this.EmpSalary = sal;
+		
+		System.out.println("EMPLOYEE ID   :  "+EmpID);
+		System.out.println("EMPLOYEE NAME   :  "+EmpName);
+		System.out.println("EMPLOYEE AGE   :  "+EmpAge);
+		System.out.println("EMPLOYEE  SALARY   :  "+EmpSalary);
+
+}
+	public static void main(String[] args) {
+    Empdetails em = new Empdetails();
+    em.getdetails(101,"",17, 35000);
+    em.getdetails(102,"ABHISHEK",19, 35000);
+
+    
+	}
+	
+	}
 ===========================================================================================================================================================================
 Q.14 Create a class which takes a string as a parameter in Parameterised constructor and perform the following operations using stringBuffer class: 
        a) Print the reverse of the string
