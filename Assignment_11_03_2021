@@ -601,24 +601,30 @@ out.print(". . . . .");
 ===========================================================================================================================================================================
 Q.6 Write a Program to create an ArrayList of 3 numbers and find the minimum of the these numbers and display it.
 
-#include <bits/stdc++.h> 
-using namespace std; 
-  
-int main() 
-{ 
-    int a = 5, b = 7, c = 10; 
-  
-    if (a <= b && a <= c) 
-        cout << a << " is the  minimum"; 
-  
-    else if (b <= a && b <= c) 
-        cout << b << " is the minimum"; 
-  
-    else
-        cout << c << " is the  minimum"; 
-  
-    return 0; 
-} 
+package P6;
+
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class ass6 {
+
+	public static void main(String[] args) {
+	ArrayList<Integer> arr = new ArrayList<Integer>();
+	
+	arr.add(40);
+	arr.add(20);
+	arr.add(70);
+	arr.add(80);
+	arr.add(10);
+	
+	System.out.println(arr);
+	int index = arr.indexOf(Collections.min(arr));
+	arr.remove(index);
+	
+	System.out.println(arr);
+	}
+
+}
 ===========================================================================================================================================================================
 Q.7 Create a class Result which implements Runnable interface.This class has a method getMarks() which takes 5 marks as arguments and returns the percentage value.The method getMarks() should be called inside run() method.Create two Thread objects of the Result class .Set the names of these objects as "student1" and "student2". Display percentage of two students in run() method.
 Ans)
