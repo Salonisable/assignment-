@@ -1,0 +1,123 @@
+1. Create a Web service where a method is returning the sum of digits of a number. Print Sum on the web Page .
+
+ANS.  Assign1.java
+
+      package MyApp1.MyApp1.pro;
+
+public class Assign1 
+
+{
+	
+	public int getSum(int a, int b)
+
+	{
+		
+		return (a + b);
+		
+	}
+		
+}
+======================================================
+   Assi1_Resource.java
+   
+   package MyApp1.MyApp1.pro;
+
+import java.util.Scanner;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+
+
+@Path("/Assignment")
+public class Assi1_Resource 
+
+{
+
+    Assign1 a1=new Assign1();
+    
+    @GET
+    @Path("/Assign1")
+    @Produces("text/plain")
+    public String display()
+    
+    { 
+        int a,b;
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter Fisrt Number :");
+        a=sc.nextInt();
+        System.out.println("Enter Second Number :");
+        b=sc.nextInt();
+        
+        int sum=a1.getSum(a, b);
+        
+        sc.close();
+        
+        return "Sum of "+a+" and "+b+" is "+sum;
+        
+    }
+    	
+}
+================================================================================================================================================================================
+2. Create a Web Service where inside a method accept fisrtname and lastname from user and display the fullname on the web page.
+Ans)
+package pro1;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+
+@Path("page1")
+public class Ass2 {
+	
+@GET
+@Produces(MediaType.TEXT_PLAIN)
+
+public String getIt()
+{
+	
+	String fn="saloni";
+	String ln="Sable";
+	
+    return fn+" "+ln;
+}
+
+
+}
+
+=========================================================================================================================================================================
+3. Create a Class as Customers. Cid, cname and qty are the members of this class. Create a resource which saves records of 5 products. Make a method which displays
+   all records in the tabular form. Make a method which displays all records in XML form. Make a method which displays the record on the basis of quantity.
+===========================================================================================================================================================================
+4. Create a form which takes user name and age in the textbox. If age is less than 10 and greater than 20 then display a message as "Not eligible to participate" else
+    print a message "Welcome username ,you are Eligible".
+===================================================================================================================================================================================
+5. Create a web serrvice which takes name and salary of an employee and print name and salary on the console, Use MatrixParam annotation.
+Ans) Ass5 class
+package org1;
+
+import javax.ws.rs.GET;
+
+import javax.ws.rs.MatrixParam;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+
+@Path("Ass5")
+public class Ass5 {
+	
+
+@GET
+@Produces(MediaType.TEXT_PLAIN)
+
+public String getData(@MatrixParam("name") String name,@MatrixParam("salary") int salary)
+{
+	
+	return name+" "+salary;
+
+	
+}
+
+}
+========================================================================================================================================================================================
