@@ -94,8 +94,7 @@ public String getIt()
     print a message "Welcome username ,you are Eligible".
 ===================================================================================================================================================================================
 5. Create a web serrvice which takes name and salary of an employee and print name and salary on the console, Use MatrixParam annotation.
-Ans) Ass5 class
-package org1;
+Ans) package ass;
 
 import javax.ws.rs.GET;
 
@@ -104,9 +103,8 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-@Path("Ass5")
+@Path("ass5")
 public class Ass5 {
-	
 
 @GET
 @Produces(MediaType.TEXT_PLAIN)
@@ -114,9 +112,10 @@ public class Ass5 {
 public String getData(@MatrixParam("name") String name,@MatrixParam("salary") int salary)
 {
 	
+	System.out.println(name+" "+salary);
+	
 	return name+" "+salary;
 
-	
 }
 
 }
